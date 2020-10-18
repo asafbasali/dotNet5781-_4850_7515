@@ -10,7 +10,7 @@ namespace exrcise_00
             for (int i=0; i < 5; i++){
                 Console.WriteLine("welcome");
             }
-            int a = 0
+            int a = 5
         }
     }
 }

@@ -1,1 +1,11 @@
-שלום אסףיא
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int asaf = 0;
+    if (asaf!=0){
+        cout<<"hi";
+        }
+    
+}

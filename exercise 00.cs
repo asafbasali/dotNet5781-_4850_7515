@@ -12,7 +12,6 @@ namespace exrcise_00
                 Console.WriteLine("welcome");
             }
             int a =1000000000000000
-
         }
     }
 }

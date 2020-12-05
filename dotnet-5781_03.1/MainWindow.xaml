@@ -15,12 +15,12 @@ VerticalAlignment="Top" Width="auto">
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions >
-            <ComboBox x:Name="cbBusLines" Grid.Column="1" HorizontalAlignment="Stretch" Margin="79,10,0,0" VerticalAlignment="Stretch" Width="120"/>
+            <ComboBox x:Name="cbBusLines" Grid.Column="1" HorizontalAlignment="Stretch" Margin="79,10,0,0" VerticalAlignment="Stretch" Width="120" SelectionChanged="cbBusLines_SelectionChanged"/>
             <TextBox x:Name ="tbArea" Grid.Column="3" HorizontalAlignment="Stretch" Height="23" Margin="114,17,0,0" TextWrapping="Wrap" Text="{Binding Path=Area}" VerticalAlignment="Stretch" Width="120"/>
             <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top"/>
             <Label x:Name="label1" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top"/>
         </Grid>
-        <ListBox x:Name="lbBusLineStations" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="100" Margin="355,391,0,0" VerticalAlignment="Top" Width="465"/>
+        <ListBox x:Name="lbBusLineStations" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="100" Margin="279,379,0,0" VerticalAlignment="Top" Width="465"/>
 
     </Grid>
 </Window>

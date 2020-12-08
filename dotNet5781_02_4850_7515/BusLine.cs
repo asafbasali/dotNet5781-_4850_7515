@@ -47,7 +47,7 @@ namespace dotNet5781_02_4850_7515
 
         void AddStation(BusStation NewBusStation)
         {
-            Stations.Add(NewBusStation);
+            Stations.Add(NewBusStation);//הוספנו מחלקת תחנת אוטובוס לרשימת התחנות שלנו
         }
 
         bool isstationexist(int _ID)

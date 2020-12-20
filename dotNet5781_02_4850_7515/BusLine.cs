@@ -12,7 +12,7 @@ namespace dotNet5781_02_4850_7515
         internal int Bus_Line;
         internal string Area;
 
-        BusLine(string _FirstStation = "", string _LastStation = "", int _Bus_Line = 0, string _Area = "")
+        public BusLine( int _Bus_Line = 0, string _Area = "")
         {
             if (_FirstStation!="")
             {

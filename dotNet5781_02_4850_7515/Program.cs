@@ -5,6 +5,8 @@ namespace dotNet5781_02_4850_7515
 {
     class Program
     {
+        public enum areaenum { south , north, central, general };
+        
         static void Main(string[] args)
         {
             int choice = -1;
@@ -19,6 +21,25 @@ namespace dotNet5781_02_4850_7515
                 switch (choice)
                 {
                     case 1:
+                        choice = -1;
+                        Console.WriteLine("for adding a new bus line enter 1 \n for adding a bus station enter 2");
+                        int choice1 = Convert.ToInt32(Console.ReadLine());
+                        if (choice1 == 1)
+                        {
+                            areaenum e = areaenum.central;
+                            Console.WriteLine("please enter a bus line number");
+                            int BuslineID = Convert.ToInt32(Console.Read());
+                            Console.WriteLine("please choose area for your bus line: \n0) south \n1) north \n2) central\n3) general");
+                            int area = Console.Read();
+                            areaenum newarea = (areaenum)(Enum.GetValues(e.GetType())).GetValue(area);
+                            lines.Add(new BusLine(BuslineID,newarea.ToString()));
+                        }
+                        if (choice1==2)
+                        {
+                            lines.Add(new BusStation());
+                        }
+                        break;
+                    case 2:
 
                     default:
                         break;

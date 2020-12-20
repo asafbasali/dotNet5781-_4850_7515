@@ -10,7 +10,7 @@ namespace dotNet5781_02_4850_7515
         internal int Latitude;
         internal int Longitude;
 
-        BusStation(int _sBusStationKey = 0, int _Latitude = 0, int _Longitude = 0)
+        public BusStation(int _sBusStationKey = 0, int _Latitude = 0, int _Longitude = 0)
         {
             if (_sBusStationKey > 0 && _sBusStationKey < 100000)
             {

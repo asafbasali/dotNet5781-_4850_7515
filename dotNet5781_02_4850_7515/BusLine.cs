@@ -6,7 +6,7 @@ namespace dotNet5781_02_4850_7515
 {
     class BusLine
     {
-        List<BusStation> Stations = new List<BusStation>();
+        internal List<BusStation> Stations = new List<BusStation>();
         internal string FirstStation;
         internal string LastStation;
         internal int Bus_Line;
@@ -14,30 +14,30 @@ namespace dotNet5781_02_4850_7515
 
         public BusLine( int _Bus_Line = 0, string _Area = "")
         {
-            if (_FirstStation!="")
-            {
-                FirstStation = _FirstStation;
-            }
-            else
-            {
+            //if (_FirstStation!="")
+            //{
+            //    FirstStation = _FirstStation;
+            //}
+            //else
+            //{
                    
-            }
-            if (_LastStation != "")
-            {
-                LastStation = _FirstStation;
-            }
-            else
-            {
+            //}
+            //if (_LastStation != "")
+            //{
+            //    LastStation = _FirstStation;
+            //}
+            //else
+            //{
 
-            }
-            if (_Bus_Line != 0)
-            {
-                LastStation = _FirstStation;
-            }
-            else
-            {
+            //}
+            //if (_Bus_Line != 0)
+            //{
+            //    LastStation = _FirstStation;
+            //}
+            //else
+            //{
 
-            }
+            //}
         }
 
         public override string ToString()

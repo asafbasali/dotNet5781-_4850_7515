@@ -17,7 +17,8 @@ namespace dotNet5781_02_4850_7515
                     "\n\n1.add a new bus or station.\n\n" + "2.deleting a bus line or bus station.\n\n" + 
                     "3.searching for station or bus line.\n\n" + "4.print the bus lines or the the stations " +
                     "with their lines.\n\n" + "0.quit.");
-                choice = Console.Read();
+                choice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(choice);
                 switch (choice)
                 {
                     case 1:
@@ -28,15 +29,28 @@ namespace dotNet5781_02_4850_7515
                         {
                             areaenum e = areaenum.central;
                             Console.WriteLine("please enter a bus line number");
-                            int BuslineID = Convert.ToInt32(Console.Read());
+                            int BuslineID = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("please choose area for your bus line: \n0) south \n1) north \n2) central\n3) general");
-                            int area = Console.Read();
+                            int area = Convert.ToInt32(Console.ReadLine());
                             areaenum newarea = (areaenum)(Enum.GetValues(e.GetType())).GetValue(area);
-                            lines.Add(new BusLine(BuslineID,newarea.ToString()));
+                            lines.Add(new BusLine(BuslineID, newarea.ToString()));
                         }
                         if (choice1==2)
                         {
-                            lines.Add(new BusStation());
+                            Console.WriteLine("please enter a line you wat to add a station to");
+                            int lineNumber = Convert.ToInt32(Console.ReadLine());
+                            foreach (BusLine line in lines)
+                            {
+                                if (line.Bus_Line == lineNumber)
+                                {
+                                    line.Stations.Add(new BusStation());
+                                }
+                                else
+                                {
+                                    Console.WriteLine("there is no bus line in that number");
+                                }
+                            }
+
                         }
                         break;
                     case 2:
@@ -45,7 +59,7 @@ namespace dotNet5781_02_4850_7515
                         break;
                 }
             }
-            Console.WriteLine( "end of program");
+            Console.WriteLine( "End Of Program");
         }
     }
 }

@@ -20,7 +20,7 @@ namespace dotNet5781_02_4850_7515
             //}
             //else
             //{
-                   
+
             //}
             //if (_LastStation != "")
             //{
@@ -30,19 +30,25 @@ namespace dotNet5781_02_4850_7515
             //{
 
             //}
-            //if (_Bus_Line != 0)
-            //{
-            //    LastStation = _FirstStation;
-            //}
-            //else
-            //{
-
-            //}
+            if (_Bus_Line != 0)
+            {
+                Bus_Line = _Bus_Line;
+            }
+            if (Area != "")
+            {
+                Area = _Area;
+            }
+            else
+            {
+                Console.WriteLine("your input is wrong please try again!");
+            }
+            Stations.Add(new BusStation());
         }
 
         public override string ToString()
         {
-            return "Bus Line: " + Bus_Line + " Area: "+Area+" Stations: "+Stations;
+            Stations.ForEach(Console.WriteLine);
+            return base.ToString()+ "Bus Line: " + Bus_Line + " Area: "+Area+" Stations: " ; 
         }
 
         void AddStation(BusStation NewBusStation)

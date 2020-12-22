@@ -6,43 +6,34 @@ namespace dotNet5781_02_4850_7515
 {
     class BusStation
     {
+        public Random location = new Random();
         internal int sBusStationKey;
         internal int Latitude;
         internal int Longitude;
+        internal string Busstationaddres = "look for me";
 
-        public BusStation(int _sBusStationKey = 0, int _Latitude = 0, int _Longitude = 0)
+
+        public BusStation(int _sBusStationKey = 0)
         {
+            Latitude = location.Next(-90, 90);
+            Longitude = location.Next(-180, 180);
             if (_sBusStationKey > 0 && _sBusStationKey < 100000)
             {
                 sBusStationKey = _sBusStationKey;
             }
             else
             {
+                Console.WriteLine("your input is wrong please try again!");
+            }
 
-            }
-            if (_Latitude >= -90 && _Latitude <= 90)
-            {
-                Latitude = _Latitude;
-            }
-            else
-            {
-
-            }
-            if (_Longitude >= -180 && _Longitude <= 180)
-            {
-                Longitude = _Longitude;
-            }
-            else
-            {
-
-            }
         }
            
         public override string ToString()
         {
-                return "Bus Station Code: "+sBusStationKey+", "+Latitude + " " + Longitude ; 
+                return "Bus Station Code: "+sBusStationKey+" ,location: "+Latitude + "." + Longitude+ " address"+Busstationaddres ; 
         }
-    
+
+
     }
     
 }

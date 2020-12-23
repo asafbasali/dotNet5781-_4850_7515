@@ -42,13 +42,14 @@ namespace dotNet5781_02_4850_7515
             {
                 Console.WriteLine("your input is wrong please try again!");
             }
-            Stations.Add(new BusStation());
+            
         }
 
         public override string ToString()
         {
+            Console.WriteLine("Bus Line: " + Bus_Line + " Area: " + Area + " Stations: ");
             Stations.ForEach(Console.WriteLine);
-            return base.ToString()+ "Bus Line: " + Bus_Line + " Area: "+Area+" Stations: " ; 
+            return "" ; 
         }
 
         void AddStation(BusStation NewBusStation)

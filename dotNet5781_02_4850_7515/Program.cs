@@ -68,7 +68,10 @@ namespace dotNet5781_02_4850_7515
                                     Console.WriteLine("there is no bus line in that number");
                                 }
                             }
-
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERROR");
                         }
                         break;
                     case 2:
@@ -107,17 +110,41 @@ namespace dotNet5781_02_4850_7515
                             }
                             Console.WriteLine("The station was removed (in case it exist)");
                         }
+                        else
+                        {
+                            Console.WriteLine("ERROR");
+                        }
                         break;
                     case 3:
+                        Console.WriteLine("for searching a line that throghu certain station enter 1.\nfor searching a line for path enter 2.");
+                        int choice3 = Convert.ToInt32(Console.ReadLine());
+                        if (choice3 == 1)
+                        {
+                            foreach (BusLine line in lines)
+                            {
+                                Console.WriteLine("please enter a bus station code: ");
+                                int BusStationcode = Convert.ToInt32(Console.ReadLine());
+                                foreach (BusStation station in line.Stations)
+                                {
+                                    if (station.sBusStationKey == BusStationcode)
+                                    {
+                                        Console.WriteLine(line.Bus_Line);
+                                    }
+                                }
+                            }
+                        }
+                        if (choice3 == 2)
+                        {
 
+                        }
                         break;
                     default:
                         break;
                 }
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    Console.WriteLine(lines[i]);
-                }
+                //for (int i = 0; i < lines.Count; i++)
+                //{
+                //    Console.WriteLine(lines[i]);
+                //}
             }
             Console.WriteLine( "End Of Program");
         }

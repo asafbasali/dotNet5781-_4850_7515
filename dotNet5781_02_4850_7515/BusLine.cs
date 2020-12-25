@@ -11,7 +11,7 @@ namespace dotNet5781_02_4850_7515
         internal string LastStation;
         internal int Bus_Line;
         internal string Area;
-
+        int timeswecreatedastation = 0;
         public BusLine( int _Bus_Line = 0, string _Area = "")
         {
             //if (_FirstStation!="")
@@ -42,7 +42,7 @@ namespace dotNet5781_02_4850_7515
             {
                 Console.WriteLine("your input is wrong please try again!");
             }
-            
+            timeswecreatedastation++;
         }
 
         public override string ToString()
@@ -52,12 +52,49 @@ namespace dotNet5781_02_4850_7515
             return "" ; 
         }
 
-        void AddStation(BusStation NewBusStation)
+        internal void AddStation(BusStation NewBusStation)
         {
             Stations.Add(NewBusStation);//הוספנו מחלקת תחנת אוטובוס לרשימת התחנות שלנו
         }
 
-        bool isstationexist(int _ID)
+        internal void RemoveStation(int StaionNumber)
+        {
+            foreach (BusStation station in Stations)
+            {
+                if (StaionNumber == station.sBusStationKey)
+                {
+                    Stations.Remove(station);
+                    break;
+                }
+            }
+        }
+
+        internal int DisBetweenstations(int key1, int key2)
+        {
+            BusStation dissum1=null;
+            BusStation dissum2=null;
+            foreach (BusStation station in Stations)
+            {
+                if (station.sBusStationKey == key1)
+                {
+                    dissum1 = station;
+                }
+                if (station.sBusStationKey == key2)
+                {
+                    dissum2 = station;
+                }
+            }
+            if (dissum1.sBusStationKey == key1 && dissum2.sBusStationKey == key2)
+            {
+                return Convert.ToInt32(Math.Sqrt(Convert.ToInt32(Math.Pow(dissum1.Latitude - dissum2.Latitude,2)) + Convert.ToInt32(Math.Pow(dissum1.Longitude - dissum2.Longitude,2))));
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        internal bool isstationexist(int _ID)
         {
             foreach (BusStation station in Stations)
             {

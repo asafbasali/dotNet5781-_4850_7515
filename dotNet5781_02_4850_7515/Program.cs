@@ -52,7 +52,10 @@ namespace dotNet5781_02_4850_7515
 
                                         if (newkey != 0)
                                         {
-                                            line.Stations.Add(new BusStation(newkey));
+                                            Console.WriteLine("please enter time from last station in miutes.");
+                                            int timefrom = Convert.ToInt32(Console.ReadLine());
+                                            line.AddStation(new BusStation(newkey));
+                                            line.Stations[1].discal.timefromprestation = timefrom;
                                             again = 0;
                                         }
                                         else
@@ -79,7 +82,7 @@ namespace dotNet5781_02_4850_7515
                         int choice2 = Convert.ToInt32(Console.ReadLine());
                         if (choice2==1)
                         {
-                            Console.WriteLine("please enter a line to delete ");
+                            Console.WriteLine("please enter a line to delete: ");
                             int linenumber = Convert.ToInt32(Console.ReadLine());
                             foreach (BusLine line in lines)
                             {
@@ -100,13 +103,7 @@ namespace dotNet5781_02_4850_7515
                             int Key = Convert.ToInt32(Console.ReadLine());
                             foreach (BusLine line in lines)
                             {
-                                foreach (BusStation station in line.Stations)
-                                {
-                                    if (station.sBusStationKey == Key)
-                                    {
-                                        line.Stations.Remove(station);
-                                    }
-                                }
+                                line.RemoveStation(Key);
                             }
                             Console.WriteLine("The station was removed (in case it exist)");
                         }

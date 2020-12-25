@@ -6,10 +6,11 @@ namespace dotNet5781_02_4850_7515
 {
     class BusStation
     {
+        internal LineBusStation discal = new LineBusStation();
         public Random location = new Random();
         internal int sBusStationKey;
-        internal int Latitude;
-        internal int Longitude;
+        internal double Latitude;
+        internal double Longitude;
         internal string Busstationaddres = "look for me";
 
 

@@ -6,7 +6,7 @@ namespace dotNet5781_02_4850_7515
 {
     class BusLine
     {
-        internal List<BusStation> Stations = new List<BusStation>();
+        private List<BusStation> Stations = new List<BusStation>();
         internal string FirstStation;
         internal string LastStation;
         internal int Bus_Line;
@@ -106,6 +106,9 @@ namespace dotNet5781_02_4850_7515
             return false;
         }
 
-
+        public List<BusStation> STations
+        {
+            get{ return Stations; }
+        }
     }
 }

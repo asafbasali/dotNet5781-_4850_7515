@@ -34,17 +34,18 @@ namespace dotNet5781_02_4850_7515
                             int area = Convert.ToInt32(Console.ReadLine());
                             areaenum newarea = (areaenum)(Enum.GetValues(e.GetType())).GetValue(area);
                             lines.Add(new BusLine(BuslineID, newarea.ToString()));
-                            Console.WriteLine(lines[0]);
                         }
-                        if (choice1==2)
+                        if (choice1 == 2)
                         {
                             Console.WriteLine("please enter a line you want to add a station to");
                             int lineNumber = Convert.ToInt32(Console.ReadLine());
                             int again = 1;
+                            bool DidWeDo;
                             foreach (BusLine line in lines)
                             {
                                 if (line.Bus_Line == lineNumber)
                                 {
+                                    DidWeDo = true;
                                     while (again!=0)
                                     {
                                         Console.WriteLine("please enter a station key: ");
@@ -55,7 +56,6 @@ namespace dotNet5781_02_4850_7515
                                             Console.WriteLine("please enter time from last station in miutes.");
                                             int timefrom = Convert.ToInt32(Console.ReadLine());
                                             line.AddStation(new BusStation(newkey));
-                                            line.Stations[1].discal.timefromprestation = timefrom;
                                             again = 0;
                                         }
                                         else
@@ -66,13 +66,13 @@ namespace dotNet5781_02_4850_7515
                                     }
                                 
                                 }
-                                else
-                                {
-                                    Console.WriteLine("there is no bus line in that number");
-                                }
+                            }
+                            if (!(DidWeDo=false))
+                            {
+                                Console.WriteLine("there is no bus line in that number\n");
                             }
                         }
-                        else
+                        if(choice1 !=1 && choice1 != 2)
                         {
                             Console.WriteLine("ERROR");
                         }
@@ -117,31 +117,73 @@ namespace dotNet5781_02_4850_7515
                         int choice3 = Convert.ToInt32(Console.ReadLine());
                         if (choice3 == 1)
                         {
+                            bool DidWeDo;
+                            Console.WriteLine("please enter a bus station code: ");
+                            int BusStationcode = Convert.ToInt32(Console.ReadLine());
                             foreach (BusLine line in lines)
                             {
-                                Console.WriteLine("please enter a bus station code: ");
-                                int BusStationcode = Convert.ToInt32(Console.ReadLine());
-                                foreach (BusStation station in line.Stations)
+                                if (line.isstationexist(BusStationcode))
                                 {
-                                    if (station.sBusStationKey == BusStationcode)
-                                    {
-                                        Console.WriteLine(line.Bus_Line);
-                                    }
+                                    Console.WriteLine(line.Bus_Line);
+                                    DidWeDo = false;
                                 }
+                            }
+                            if ((DidWeDo = false))
+                            {
+                                Console.WriteLine("There is no line or station matching your input");
                             }
                         }
                         if (choice3 == 2)
                         {
+                            Console.WriteLine("Please enter the first bus station key: ");
+                            int firstKey = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Please enter the second bus station key: ");
+                            int secondKey = Convert.ToInt32(Console.ReadLine());
+                            bool DidWeDo;
 
+                            foreach (BusLine line in lines)
+                            {
+                                if (line.isstationexist(firstKey) && line.isstationexist(secondKey))
+                                {
+                                    Console.WriteLine(line.Bus_Line);
+                                    DidWeDo = false;
+                                }
+                            }
+                            if ((DidWeDo = false))
+                            {
+                                Console.WriteLine("There is no line or station matching your input");
+                            }
+                        }
+                        break;
+                    case 4:
+                        Console.WriteLine("for viewing all the lines enter 1");
+                        int choice4;
+                        choice4 = Convert.ToInt32(Console.ReadLine());
+                        if (choice4 == 1)
+                        {
+                            foreach (BusLine line in lines)
+                            {
+                                line.ToString();
+                            }
+                        }
+                        if (choice4 == 2)
+                        {
+                            foreach (BusLine line in lines)
+                            {
+                                Console.WriteLine("line:",line.Bus_Line);
+                                List<BusStation> Toprint = new List<BusStation>();
+                                Toprint = line.STations;
+                                foreach (BusStation station in Toprint)
+                                {
+                                    Console.WriteLine(station.ToString());
+                                }
+                            }
                         }
                         break;
                     default:
+                        Console.WriteLine("WRONG INPUT");
                         break;
                 }
-                //for (int i = 0; i < lines.Count; i++)
-                //{
-                //    Console.WriteLine(lines[i]);
-                //}
             }
             Console.WriteLine( "End Of Program");
         }

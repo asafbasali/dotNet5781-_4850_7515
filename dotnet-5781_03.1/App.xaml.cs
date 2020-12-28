@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace dotnet_5781_03._1
 {
@@ -13,5 +7,6 @@ namespace dotnet_5781_03._1
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

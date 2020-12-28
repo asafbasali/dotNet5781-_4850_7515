@@ -11,7 +11,7 @@ namespace dotNet5781_02_4850_7515
         internal int sBusStationKey;
         internal double Latitude;
         internal double Longitude;
-        internal string Busstationaddres = "look for me";
+        internal string Busstationaddres = "some address";
 
 
         public BusStation(int _sBusStationKey = 0)
@@ -33,8 +33,5 @@ namespace dotNet5781_02_4850_7515
         {
                 return "Bus Station Code: "+sBusStationKey+" ,location: "+Latitude + ", " + Longitude+ " address"+Busstationaddres ; 
         }
-
-
     }
-    
 }

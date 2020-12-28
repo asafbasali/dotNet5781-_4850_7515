@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace dotNet5781_02_4850_7515
 {
-    class LineBusStation
+    class LineBusStation : IEnumerable
     {
+        internal List<BusLine> lines = new List<BusLine>(); 
         internal int disfromprestation;//מרחק מתחנה קודמת 
         internal int timefromprestation;//זמן מתחנה קודמת
 
@@ -21,6 +23,17 @@ namespace dotNet5781_02_4850_7515
         int dis_between_stations(LineBusStation newstation)
         {
             return Math.Abs(this.disfromprestation - newstation.disfromprestation);
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return ((IEnumerable)lines).GetEnumerator();
+        }
+
+        public BusLine this[int i]
+        {
+            get { return lines[i]; }
+            set { lines[i] = value; }
         }
     }
 }

@@ -10,8 +10,18 @@ namespace dotNet5781_02_4850_7515
         
         static void Main(string[] args)
         {
+            Random R = new Random();
             int choice = -1;
             List<BusLine> lines = new List<BusLine>();
+            for (int i = 0; i < 10; i++)
+            {
+                lines.Add(new BusLine(R.Next(500), "north"));
+                for (int j = 0; j <R.Next(4,10); j++)
+                {
+                    lines[i].AddStation(new BusStation(R.Next(1, 500)));
+                }
+            }
+
             while (choice != 0)
             {
                 Console.WriteLine("hello and welcome to our system \n \nhere you can manage your Bus Compeny. " +

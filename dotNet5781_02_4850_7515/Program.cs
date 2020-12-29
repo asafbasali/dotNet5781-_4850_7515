@@ -94,17 +94,19 @@ namespace dotNet5781_02_4850_7515
                         {
                             Console.WriteLine("please enter a line to delete: ");
                             int linenumber = Convert.ToInt32(Console.ReadLine());
-                            foreach (BusLine line in lines)
+                            bool removed = false;
+                            for (int i = 0; i<lines.Count();i++)
                             {
-                                if (line.Bus_Line == linenumber)
+                                if (lines[i].Bus_Line == linenumber)
                                 {
-                                    lines.Remove(line);
+                                    lines.Remove(lines[i]);
                                     Console.WriteLine("The line was removed!");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("there is no line in that number");
-                                }
+                                    removed = true;
+                                }   
+                            }
+                            if (!(removed=false))
+                            {
+                                Console.WriteLine("there is no line in that number");
                             }
                         }
                         if (choice2 == 2)
@@ -117,7 +119,7 @@ namespace dotNet5781_02_4850_7515
                             }
                             Console.WriteLine("The station was removed (in case it exist)");
                         }
-                        else
+                        if (choice2 !=1 && choice2 != 2)
                         {
                             Console.WriteLine("ERROR");
                         }
@@ -159,10 +161,14 @@ namespace dotNet5781_02_4850_7515
                                     DidWeDo = false;
                                 }
                             }
-                            if ((DidWeDo = false))
+                            if (!(DidWeDo = false))
                             {
                                 Console.WriteLine("There is no line or station matching your input");
                             }
+                        }
+                        if (choice3 != 1 && choice3 != 2)
+                        {
+                            Console.WriteLine("ERROR");
                         }
                         break;
                     case 4:
@@ -188,6 +194,10 @@ namespace dotNet5781_02_4850_7515
                                     Console.WriteLine(station.ToString());
                                 }
                             }
+                        }
+                        if (choice4 != 1 && choice4 != 2)
+                        {
+                            Console.WriteLine("ERROR");
                         }
                         break;
                     default:

@@ -58,6 +58,8 @@ namespace dotnet_5781_03._1
             internal int Bus_Line;
             internal string Area;
             int timeswecreatedastation = 0;
+            internal readonly int BusLineNum;
+
             public BusLine(int _Bus_Line = 0, string _Area = "")
             {
                 //if (_FirstStation!="")

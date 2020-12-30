@@ -31,21 +31,17 @@ namespace dotNet5781_01_4850_7515
         }
         public void StartDrive(int _dis)
         {
-            int count = 0;
+            int count = 1;
             if (totaldis - _dis <= 0)
             {
                 Console.WriteLine("you can't drive you need to treat your Bus\n");
                 count = 0;
             }
-            else
+            if (fuel - _dis*0.5 <= 0 && count == 1)
             {
-                count = 1;
+                Console.WriteLine("you can't drive you need to fuel your Bus\n");
             }
-            if (fuel - _dis <= 0 && count == 1)
-            {
-                Console.WriteLine("you can't drinve you need to fuel your Bus\n");
-            }
-            else
+            else if (count != 0)
             {
                 totaldis -= _dis;
                 sumdis += _dis;

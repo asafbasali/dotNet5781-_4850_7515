@@ -8,6 +8,7 @@ namespace DO
     {
         internal int Id; 
         internal int busnumber;
-
+        internal int Idfirststation;
+        internal int Idlaststation;
     }
 }

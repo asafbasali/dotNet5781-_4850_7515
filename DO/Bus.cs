@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DO
 {
-    class Bus
+    public class Bus
     {
         internal string FirstStation;
         internal string LastStation;

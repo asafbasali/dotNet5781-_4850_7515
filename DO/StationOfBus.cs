@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DO
 {
-    class StationOfBus
+    public class StationOfBus
     {
         internal int ID;
         internal int busnumber;

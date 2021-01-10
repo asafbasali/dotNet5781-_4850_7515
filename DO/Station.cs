@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DO
 {
-    class Station
+    public class Station
     {
         public Random location = new Random();
         internal int sBusStationKey;

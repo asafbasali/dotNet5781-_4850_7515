@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DO
 {
-    class exiteLine
+    public class exiteLine
     {
         internal int IDLinebus;
         internal int exitLine;

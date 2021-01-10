@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DO
 {
-    class FolowingStation
+    public class FolowingStation
     {
         internal int Idstation1;
         internal int Idstation2;

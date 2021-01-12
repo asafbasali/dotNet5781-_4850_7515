@@ -161,16 +161,16 @@ namespace dotnet_5781_03._1
         }
         public MainWindow()
         {
-
             InitializeComponent();
+            for (int i = 0; i < 10; i++)
+            {
+                busLines.Add(new BusLine(12, "north"));
+            }
             cbBusLines.ItemsSource = busLines;
             cbBusLines.DisplayMemberPath = " BusLineNum ";
             cbBusLines.SelectedIndex = 0;
-            BusLine currentDisplayBusLine;
-            for (int i = 0; i < 10; i++)
-            {
-                busLines.Add(new BusLine());
-            }
+            BusLine currentDisplayBusLine = new BusLine();
+
         }
         private BusLine currentDisplayBusLine;
 
@@ -185,6 +185,11 @@ namespace dotnet_5781_03._1
         private void cbBusLines_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowBusLine((cbBusLines.SelectedValue as BusLine).BusLineNum);
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

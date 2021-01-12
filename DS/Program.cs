@@ -2,12 +2,15 @@
 using DO;
 namespace DS
 {
-    class Program 
+    class Program
     {
-        internal List<DO.Station> Stations = new List<DO.Station>();
-        internal List<DO.StationOfBus> StationLines = new List<DO.StationOfBus>();
-        internal List<DO.BusLine> Lines = new List<DO.BusLine>();
-        internal List<DO.FolowingStation> tracking_stations = new List<DO.FolowingStation>();
+        static void Main(string[] args)
+        {    
+         List<DO.Station> Stations = new List<DO.Station>();
+         List<DO.StationOfBus> StationLines = new List<DO.StationOfBus>();
+         List<DO.BusLine> Lines = new List<DO.BusLine>();
+         List<DO.FolowingStation> tracking_stations = new List<DO.FolowingStation>();
+        }
     }
 }
 

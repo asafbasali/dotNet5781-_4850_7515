@@ -164,13 +164,13 @@ namespace dotnet_5781_03._1
             InitializeComponent();
             for (int i = 0; i < 10; i++)
             {
-                busLines.Add(new BusLine(12, "north"));
+                busLines.Add(new BusLine(1+i, "north"));
             }
             cbBusLines.ItemsSource = busLines;
-            cbBusLines.DisplayMemberPath = " BusLineNum ";
+            cbBusLines.DisplayMemberPath = "BusLineNum ";
             cbBusLines.SelectedIndex = 0;
             BusLine currentDisplayBusLine = new BusLine();
-
+            ShowBusLine(cbBusLines.SelectedIndex);
         }
         private BusLine currentDisplayBusLine;
 

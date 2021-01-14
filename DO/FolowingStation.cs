@@ -6,9 +6,9 @@ namespace DO
 {
     public class FolowingStation
     {
-        internal int Idstation1;
-        internal int Idstation2;
-        internal int distance;
-        internal int avgtime;
+        public int Idstation1 { get; set; }
+        public int Idstation2 { get; set; }
+        public int distance { get; set; }
+        public int avgtime { get; set; }
     }
 }

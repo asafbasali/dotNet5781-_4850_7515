@@ -6,8 +6,8 @@ namespace DO
 {
     public class StationOfBus
     {
-        internal int ID;
-        internal int busnumber;
-        internal int posinstations;//המיקום של התחנה ביחס לשאר התחנות
+        public int ID { get; set; }
+        public int busnumber { get; set; }
+        public int posinstations { get; set; }//המיקום של התחנה ביחס לשאר התחנות
     }
 }

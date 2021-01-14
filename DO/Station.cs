@@ -6,10 +6,9 @@ namespace DO
 {
     public class Station
     {
-        public Random location = new Random();
-        internal int sBusStationKey;
-        internal double Latitude;
-        internal double Longitude;
-        internal string Busstationaddres = "";
+        public int sBusStationKey { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public string Busstationaddres { get; set; }
     }
 }

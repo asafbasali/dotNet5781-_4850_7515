@@ -6,8 +6,8 @@ namespace DO
 {
     public class exiteLine
     {
-        internal int IDLinebus;
-        internal int exitLine;
-        internal int finishtime;
+        public int IDLinebus { get; set; }
+        public int exitLine { get; set; }
+        public int finishtime { get; set; }
     }  //internal int frequency;
 }

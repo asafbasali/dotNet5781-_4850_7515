@@ -6,9 +6,9 @@ namespace DO
 {
     public class BusLine
     {
-        internal int Id; 
-        internal int busnumber;
-        internal int Idfirststation;
-        internal int Idlaststation;
+        public int Id { get; set; }
+        public int busnumber { get; set; }
+        public int Idfirststation { get; set; }
+        public int Idlaststation { get; set; }
     }
 }

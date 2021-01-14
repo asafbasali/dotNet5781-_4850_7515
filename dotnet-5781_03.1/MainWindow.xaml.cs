@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using dotnet_5781_03;
+
 namespace dotnet_5781_03._1
 {
     /// <summary>
@@ -20,6 +20,7 @@ namespace dotnet_5781_03._1
     /// </summary>
     public partial class MainWindow : Window
     {
+        Random R;
         class BusStation
         {
             public Random location = new Random();
@@ -29,7 +30,7 @@ namespace dotnet_5781_03._1
             internal string Busstationaddres = "look for me";
 
 
-            public BusStation(int _sBusStationKey = 0)
+            public BusStation(int _sBusStationKey)
             {
                 Latitude = location.Next(-90, 90);
                 Longitude = location.Next(-180, 180);
@@ -49,7 +50,7 @@ namespace dotnet_5781_03._1
                 return "Bus Station Code: " + sBusStationKey + " ,location: " + Latitude + ", " + Longitude + " address" + Busstationaddres;
             }
         }
-        List<BusLine> busLines = new List<BusLine>();
+        List<BusLine> busLines;
         class BusLine
         {
             private List<BusStation> Stations = new List<BusStation>();
@@ -58,9 +59,14 @@ namespace dotnet_5781_03._1
             internal int Bus_Line;
             internal string Area;
             int timeswecreatedastation = 0;
-            internal readonly int BusLineNum;
+            public int BusLineNum { get; set; }
 
-            public BusLine(int _Bus_Line = 0, string _Area = "")
+            public BusLine()
+            {
+
+            }
+
+            public BusLine(int _Bus_Line, string _Area)
             {
                 //if (_FirstStation!="")
                 //{
@@ -78,18 +84,8 @@ namespace dotnet_5781_03._1
                 //{
 
                 //}
-                if (_Bus_Line != 0)
-                {
-                    Bus_Line = _Bus_Line;
-                }
-                if (Area != "")
-                {
+                    BusLineNum = _Bus_Line;
                     Area = _Area;
-                }
-                else
-                {
-                    Console.WriteLine("your input is wrong please try again!");
-                }
                 timeswecreatedastation++;
             }
 
@@ -162,12 +158,21 @@ namespace dotnet_5781_03._1
         public MainWindow()
         {
             InitializeComponent();
+
+            busLines = new List<BusLine>();
+
             for (int i = 0; i < 10; i++)
             {
-                busLines.Add(new BusLine(1+i, "north"));
+                busLines.Add(new BusLine(i + 1, "north"));
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                busLines[i].STations.Add(new BusStation(9));
+                busLines[i].STations.Add(new BusStation(7));
+                busLines[i].STations.Add(new BusStation(4));
             }
             cbBusLines.ItemsSource = busLines;
-            cbBusLines.DisplayMemberPath = "BusLineNum ";
+            cbBusLines.DisplayMemberPath = "BusLineNum";
             cbBusLines.SelectedIndex = 0;
             BusLine currentDisplayBusLine = new BusLine();
             ShowBusLine(cbBusLines.SelectedIndex);

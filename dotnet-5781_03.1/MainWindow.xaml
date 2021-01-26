@@ -27,7 +27,7 @@
                 <TextBox x:Name="tbArea" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="46,22,0,0" TextWrapping="Wrap" Text="{Binding Path=Area}"
                  VerticalAlignment="Top" Width="120"/>
             </Grid>
-            <ListBox x:Name="lbBusLineStations" HorizontalAlignment="Left" Height="100" Margin="191,150,0,0" Grid.Row="1" ItemsSource="{Binding}" VerticalAlignment="Top" Width="235"/>
+            <ListBox x:Name="lbBusLineStations" HorizontalAlignment="Left" Height="339" Margin="10,23,0,0" Grid.Row="1" ItemsSource="{Binding}" VerticalAlignment="Top" Width="320" SelectionChanged="lbBusLineStations_SelectionChanged"/>
         </Grid>
 
     </Grid>

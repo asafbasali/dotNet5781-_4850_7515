@@ -12,10 +12,10 @@ namespace DS
     public static class DataBase
     {
   
-        public static  List<BusLine> Stations = new List<DO.BusLine>();
-        public static List<StationOfBus> StationLines = new List<DO.StationOfBus>();
-        public static List<BusLine> Lines = new List<DO.BusLine>();
-        public static List<FolowingStation> tracking_stations = new List<DO.FolowingStation>();
+        public static  List<DO.Station>Stations = new List<DO.Station>();
+        public static List<DO.StationOfBus> StationLines = new List<DO.StationOfBus>();
+        public static List<DO.BusLine> Lines = new List<DO.BusLine>();
+        public static List<DO.FolowingStation> tracking_stations = new List<DO.FolowingStation>();
 
         static DataBase()
         {
@@ -24,16 +24,16 @@ namespace DS
         static void Start()
         {
             Random R = new Random();
-            Stations = new List<BusLine>
+            Stations = new List<Station>
             {
-                new BusLine
+                new Station
                 {
                     sBusStationKey = 20,
                     Latitude = R.Next(-90, 90),
                     Longitude = R.Next(-180, 180),
                     Busstationaddres = "Avtlion"
                 },
-                new BusLine
+                new Station
                 {
                     sBusStationKey = 23,
                     Latitude = R.Next(-90, 90),
@@ -41,8 +41,15 @@ namespace DS
                     Busstationaddres = "Shamay"
                 }
             };
-
-
+            Lines = new List<BusLine>
+            {
+                new BusLine
+                {
+                    Id = 1234,
+                    busnumber = 279,
+                    Idfirststation = 1
+                }
+            };
         }
         
     }

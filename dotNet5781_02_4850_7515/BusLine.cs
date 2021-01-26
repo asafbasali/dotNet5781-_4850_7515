@@ -14,22 +14,6 @@ namespace dotNet5781_02_4850_7515
         int timeswecreatedastation = 0;
         public BusLine( int _Bus_Line = 0, string _Area = "")
         {
-            //if (_FirstStation!="")
-            //{
-            //    FirstStation = _FirstStation;
-            //}
-            //else
-            //{
-
-            //}
-            //if (_LastStation != "")
-            //{
-            //    LastStation = _FirstStation;
-            //}
-            //else
-            //{
-
-            //}
             if (_Bus_Line != 0)
             {
                 Bus_Line = _Bus_Line;

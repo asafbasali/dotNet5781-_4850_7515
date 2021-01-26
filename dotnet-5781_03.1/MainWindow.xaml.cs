@@ -165,12 +165,57 @@ namespace dotnet_5781_03._1
             {
                 busLines.Add(new BusLine(i + 1, "north"));
             }
-            for (int i = 0; i < 10; i++)
-            {
-                busLines[i].STations.Add(new BusStation(9));
-                busLines[i].STations.Add(new BusStation(7));
-                busLines[i].STations.Add(new BusStation(4));
-            }
+            #region addstations
+            busLines[0].STations.Add(new BusStation(6));
+            busLines[0].STations.Add(new BusStation(7));
+            busLines[0].STations.Add(new BusStation(4));
+
+
+            busLines[1].STations.Add(new BusStation(11));
+            busLines[1].STations.Add(new BusStation(65));
+            busLines[1].STations.Add(new BusStation(98));
+
+
+            busLines[2].STations.Add(new BusStation(76));
+            busLines[2].STations.Add(new BusStation(89));
+            busLines[2].STations.Add(new BusStation(78));
+
+
+            busLines[3].STations.Add(new BusStation(65));
+            busLines[3].STations.Add(new BusStation(47));
+            busLines[3].STations.Add(new BusStation(54));
+
+
+            busLines[4].STations.Add(new BusStation(53));
+            busLines[4].STations.Add(new BusStation(34));
+            busLines[4].STations.Add(new BusStation(23));
+
+
+            busLines[5].STations.Add(new BusStation(90));
+            busLines[5].STations.Add(new BusStation(09));
+            busLines[5].STations.Add(new BusStation(8));
+
+
+            busLines[6].STations.Add(new BusStation(66));
+            busLines[6].STations.Add(new BusStation(69));
+            busLines[6].STations.Add(new BusStation(1));
+
+
+            busLines[7].STations.Add(new BusStation(100));
+            busLines[7].STations.Add(new BusStation(102));
+            busLines[7].STations.Add(new BusStation(103));
+
+
+            busLines[8].STations.Add(new BusStation(200));
+            busLines[8].STations.Add(new BusStation(202));
+            busLines[8].STations.Add(new BusStation(203));
+
+
+            busLines[9].STations.Add(new BusStation(300));
+            busLines[9].STations.Add(new BusStation(301));
+            busLines[9].STations.Add(new BusStation(302));
+            #endregion
+
             cbBusLines.ItemsSource = busLines;
             cbBusLines.DisplayMemberPath = "BusLineNum";
             cbBusLines.SelectedIndex = 0;
@@ -181,9 +226,17 @@ namespace dotnet_5781_03._1
 
         private void ShowBusLine(int index)
         {
-            currentDisplayBusLine = busLines[index];
-            UpGrid.DataContext = currentDisplayBusLine;
-            lbBusLineStations.DataContext = currentDisplayBusLine.STations;
+            if (index<busLines.Count)
+            {
+                currentDisplayBusLine = busLines[index];
+                UpGrid.DataContext = currentDisplayBusLine;
+                lbBusLineStations.DataContext = currentDisplayBusLine.STations;
+            }
+            else
+            {
+                MessageBox.Show("not exist");
+            }
+
         }
 
 
@@ -192,9 +245,9 @@ namespace dotnet_5781_03._1
             ShowBusLine((cbBusLines.SelectedValue as BusLine).BusLineNum);
         }
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void lbBusLineStations_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            ShowBusLine((cbBusLines.SelectedValue as BusLine).BusLineNum);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DO
 {
-    public class BusLine
+    public class Station
     {
         public int sBusStationKey { get; set; }
         public double Latitude { get; set; }

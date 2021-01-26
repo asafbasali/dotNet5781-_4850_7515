@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\dotnet-5781_03.1\dotnet-5781_03.1_4850_7515.csproj" />
+  </ItemGroup>
+
 </Project>

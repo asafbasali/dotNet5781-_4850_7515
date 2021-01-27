@@ -19,7 +19,7 @@ namespace dotnet_5781_03._2_4850_7515
     /// </summary>
     public partial class Window1 : Window
     {
-        public string date;
+        public DateTime date = new DateTime();
         public string Busnumber;
         public Window1()
         {
@@ -37,7 +37,7 @@ namespace dotnet_5781_03._2_4850_7515
 
         public void onclick(object sender, RoutedEventArgs e)
         {
-            date = textBox1.Text;
+            date = this.mydate.DisplayDate;
             Busnumber = textBox.Text;
             this.Close();
         }

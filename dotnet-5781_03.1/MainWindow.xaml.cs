@@ -248,6 +248,12 @@ namespace dotnet_5781_03._1
         private void lbBusLineStations_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowBusLine((cbBusLines.SelectedValue as BusLine).BusLineNum);
+            lbBusLineStations.Items.Refresh();
+        }
+
+        private void cbBusLines_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

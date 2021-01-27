@@ -29,8 +29,8 @@ namespace dotnet_5781_03._2_4850_7515
             static int fuel;
             static int totaldis;
             static int sumdis = 0;
-            static string iD { get; set; }
-            static DateTime start_date = new DateTime();
+            public string ID { get; set; }
+            public DateTime start_date = new DateTime();
             static DateTime timesincelasttreatment = new DateTime();
             public int BusNum { get; set; }
             
@@ -42,7 +42,7 @@ namespace dotnet_5781_03._2_4850_7515
 
             public Bus(string _id, DateTime date)
             {
-                iD = _id;
+                ID = _id;
                 start_date = date;
                 fuel = 1200;
                 totaldis = 20000;
@@ -80,11 +80,11 @@ namespace dotnet_5781_03._2_4850_7515
 
             public void Print_deatails()
             {
-                Console.WriteLine("\nID " + iD + " " + "\ntotal distance: " + totaldis + "\n all distance the Bus did: " + sumdis + "\n" + "strting date: " + start_date + "\n");
+                Console.WriteLine("\nID " + ID + " " + "\ntotal distance: " + totaldis + "\n all distance the Bus did: " + sumdis + "\n" + "strting date: " + start_date + "\n");
             }
             public override string ToString()
             {
-                return "\nID " + iD + " " + "\ntotal distance: " + totaldis + "\n all distance the Bus did: " + sumdis + "\n" + "strting date: " + start_date + "\n";
+                return "\nID " + ID + " " + "\ntotal distance: " + totaldis + "\n all distance the Bus did: " + sumdis + "\n" + "strting date: " + start_date + "\n";
             }
         }
         List<Bus> buses = new List<Bus>();
@@ -95,13 +95,9 @@ namespace dotnet_5781_03._2_4850_7515
             {
                 DateTime temp = new DateTime();
                 temp = DateTime.Now;
-                buses.Add(new Bus(Convert.ToString(i), temp));
+                buses.Add(new Bus(Convert.ToString(1+i), temp));
             }
-            for (int i = 0; i < buses.Count; i++)
-            {
-                MessageBox.Show(buses[i].ToString());
-                BusesList.Items.Add(buses[i]);
-            }
+            BusesList.ItemsSource = buses;
             
         }
         private Bus currentDisplayBus;
@@ -120,7 +116,8 @@ namespace dotnet_5781_03._2_4850_7515
         }
         private void BusesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Showbus((BusesList.SelectedValue as Bus).BusNum);
+            MessageBox.Show(BusesList.SelectedItem.ToString());
+            
         }
 
         private void openwindow(object sender, RoutedEventArgs e)
@@ -129,12 +126,8 @@ namespace dotnet_5781_03._2_4850_7515
             this.Visibility = Visibility.Visible;
             newwindow.ShowDialog();
             string num = Convert.ToString(newwindow.Busnumber);
-            MessageBox.Show(num + " " + newwindow.date);
-            DateTime newdate = DateTime.Parse(newwindow.date, new CultureInfo("en-CA"));
+            DateTime newdate = newwindow.date;
             buses.Add(new Bus(num, newdate));
-            MessageBox.Show(num + " " + newdate);
-            MessageBox.Show(buses[0].ToString());
-            BusesList.Items.Add(buses[0].ToString());
             BusesList.Items.Refresh();
             InitializeComponent();
         }

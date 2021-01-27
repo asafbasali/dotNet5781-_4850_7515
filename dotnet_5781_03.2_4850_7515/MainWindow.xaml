@@ -5,12 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dotnet_5781_03._2_4850_7515"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="598.295" Width="910.331">
     <Grid>
-        <Grid Name ="buslist" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="326">
-            <ListBox x:Name="BusesList" ItemsSource="{Binding}" Height="275"  Margin="25,103,20,0" VerticalAlignment="Top" SelectionChanged="BusesList_SelectionChanged"/>
+        <Grid Name ="buslist" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="656">
+            <ListBox x:Name="BusesList" ItemsSource="{Binding Path=buses}"  Margin="25,103,20,0" SelectionChanged="BusesList_SelectionChanged" Height="275" VerticalAlignment="Top"/>
         </Grid>
-        <Button x:Name="button" Content="add bus" HorizontalAlignment="Left" Margin="81,26,0,0" VerticalAlignment="Top" Width="188" Height="63" FontSize="20" Click="openwindow"/>
-
+        <Button x:Name="button" Content="add bus" HorizontalAlignment="Left" Margin="243,36,0,0" VerticalAlignment="Top" Width="188" Height="63" FontSize="20" Click="openwindow"/>
     </Grid>
 </Window>

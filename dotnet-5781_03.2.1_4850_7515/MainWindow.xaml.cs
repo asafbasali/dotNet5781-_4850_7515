@@ -12,18 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Timers;
-using System.Threading;
-using System.Globalization;
 
-namespace dotnet_5781_03._2_4850_7515
+namespace dotnet_5781_03._2._1_4850_7515
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        enum status {readytodrive,driving,fueling,treating}
+        enum status { readytodrive, driving, fueling, treating }
         class Bus
         {
             enum status { };
@@ -39,7 +36,7 @@ namespace dotnet_5781_03._2_4850_7515
             }
             static DateTime timesincelasttreatment = new DateTime();
             public int BusNum { get; set; }
-            
+
             public void t()
             {
                 Console.WriteLine(start_date);
@@ -100,10 +97,10 @@ namespace dotnet_5781_03._2_4850_7515
             {
                 DateTime temp = new DateTime();
                 temp = DateTime.Now;
-                buses.Add(new Bus(Convert.ToString(1+i), temp));
+                buses.Add(new Bus(Convert.ToString(1 + i), temp));
             }
             BusesList.ItemsSource = buses;
-            
+
         }
         private Bus currentDisplayBus;
         public void Showbus(int index)
@@ -126,7 +123,7 @@ namespace dotnet_5781_03._2_4850_7515
 
         private void openwindow(object sender, RoutedEventArgs e)
         {
-            Window1 newwindow = new Window1();
+            AddBus newwindow = new AddBus();
             this.Visibility = Visibility.Visible;
             newwindow.ShowDialog();
             string num = Convert.ToString(newwindow.Busnumber);
@@ -138,20 +135,20 @@ namespace dotnet_5781_03._2_4850_7515
 
         private void info(object sender, MouseButtonEventArgs e)
         {
-            showdetails info = new showdetails();
+            info Info = new info();
             Bus Bus = ((Bus)this.BusesList.SelectedItem);
 
-            info.IDlabel.Content = Bus.ID;
-            info.Fuellabel.Content = Bus.fuel;
-            info.Distancelabel.Content = Bus.sumdis;
-            info.Datelabel.Content = Bus.start_date;
+            Info.IDlabel.Content = Bus.ID;
+            Info.Fuellabel.Content = Bus.fuel;
+            Info.Distancelabel.Content = Bus.sumdis;
+            Info.Datelabel.Content = Bus.start_date;
 
-            info.Show();
+            Info.Show();
         }
 
         private void trip(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void fuel(object sender, RoutedEventArgs e)

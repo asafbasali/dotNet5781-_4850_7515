@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "BL\BL.csproj", "{FA73
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL", "WpfApp1\PL.csproj", "{9DCF1235-38C6-43C0-B1F9-0E98C5A5F894}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet_5781_03.2_4850_7515", "dotnet_5781_03.2_4850_7515\dotnet_5781_03.2_4850_7515.csproj", "{F263FCD7-406B-4CF3-937C-579A6FA14D60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet-5781_03.2.1_4850_7515", "dotnet-5781_03.2.1_4850_7515\dotnet-5781_03.2.1_4850_7515.csproj", "{4A3CEC6F-1F8B-4D7F-B79C-C5D3A35ADACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,10 +52,10 @@ Global
 		{9DCF1235-38C6-43C0-B1F9-0E98C5A5F894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DCF1235-38C6-43C0-B1F9-0E98C5A5F894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DCF1235-38C6-43C0-B1F9-0E98C5A5F894}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F263FCD7-406B-4CF3-937C-579A6FA14D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F263FCD7-406B-4CF3-937C-579A6FA14D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F263FCD7-406B-4CF3-937C-579A6FA14D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F263FCD7-406B-4CF3-937C-579A6FA14D60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A3CEC6F-1F8B-4D7F-B79C-C5D3A35ADACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3CEC6F-1F8B-4D7F-B79C-C5D3A35ADACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3CEC6F-1F8B-4D7F-B79C-C5D3A35ADACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3CEC6F-1F8B-4D7F-B79C-C5D3A35ADACB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

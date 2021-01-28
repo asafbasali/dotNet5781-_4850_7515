@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace dotnet_5781_03._2_4850_7515
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for showdetails.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class showdetails : Window
     {
-        public MainWindow()
+        public showdetails()
         {
             InitializeComponent();
-        }
-
-        private void userpassword_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

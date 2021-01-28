@@ -27,18 +27,30 @@ namespace BL
             }
             return new DO.BusLine();
         }
-        void AddStation(DO.Station NewBusStation)
+        void AddStationToBusLine(DO.Station NewBusStation,int ID)
         {
-            DS.DataBase.Stations.Add(NewBusStation);//הוספנו מחלקת תחנת אוטובוס לרשימת התחנות שלנו
-        }
-        void RemoveStation(int StaionNumber)
-        {
-            foreach (DO.Station station in DS.DataBase.Stations)
+            foreach (DO.BusLine Busline in DS.DataBase.Lines)
             {
-                if (StaionNumber == station.sBusStationKey)
+                if (Busline.Id == ID)
                 {
-                    DS.DataBase.Stations.Remove(station);
-                    break;
+                    Busline.Stations.Add(NewBusStation);
+                }
+            }    
+        }
+        void RemoveStationFromBusLine(int StationNumber,int ID)
+        {
+            foreach (DO.BusLine Busline in DS.DataBase.Lines)
+            {
+                if (Busline.Id == ID)
+                {
+                    foreach (DO.Station station in Busline.Stations)
+                    {
+                        if (station.sBusStationKey == StationNumber)
+                        {
+                            Busline.Stations.Remove(station);
+                            break;
+                        }
+                    }
                 }
             }
         }
@@ -61,6 +73,105 @@ namespace BL
                 Console.WriteLine("there is no bus with this ID");
             }
         }
+
+        #endregion
+
+        #region Station
+        public void AddStation(DO.Station newsstation)
+        {
+            DS.DataBase.Stations.Add(newsstation);
+        }
+
+        public void removeStation(int ID)
+        {
+            foreach (DO.Station station in DS.DataBase.Stations)
+            {
+                if (station.sBusStationKey == ID)
+                {
+                    DS.DataBase.Stations.Remove(station);
+                    break;
+                }
+            }
+        }
+        #endregion
+
+        #region Bus
+        //public string GetID()
+        //{
+        //    return DS.DataBase.Buses.iD;
+        //}
+        //public void t(int ID)
+        //{
+
+        //    Console.WriteLine(start_date);
+        //}
+
+        //public Bus(string _id, DateTime date)
+        //{
+        //    bus.iD = _id;
+        //    start_date = date;
+        //    fuel = 1200;
+        //    totaldis = 20000;
+        //}
+        public void StartDrive(int _dis,int ID)
+        {
+            foreach (DO.Bus bus in DS.DataBase.Buses)
+            {
+                if (bus.iD == ID)
+                {
+                    int count = 1;
+                    if (bus.totaldis - _dis <= 0)
+                    {
+                        Console.WriteLine("you can't drive you need to treat your Bus\n");
+                        count = 0;
+                    }
+                    if (bus.fuel - _dis * 0.5 <= 0 && count == 1)
+                    {
+                        Console.WriteLine("you can't drive you need to fuel your Bus\n");
+                    }
+                    else if (count != 0)
+                    {
+                        bus.totaldis -= _dis;
+                        bus.sumdis += _dis;
+                        bus.fuel -= _dis;
+                        Console.WriteLine("You can go");
+                    }
+                }
+            }
+
+        }
+
+        public void Treating_your_Bus(int ID)
+        {
+            foreach (DO.Bus bus in DS.DataBase.Buses)
+            {
+                if (bus.iD == ID)
+                {
+                    bus.totaldis = 20000;
+                    break;
+                }
+            }
+        }
+
+        public void Fuel_your_Bus(int ID)
+        {
+            foreach (DO.Bus bus in DS.DataBase.Buses)
+            {
+                if (bus.iD == ID)
+                {
+                    bus.fuel = 20000;
+                    break;
+                }
+            }
+        }
+
+        //public void Print_deatails()
+        //{
+        //    Console.WriteLine("\nID " + iD + " " + "\ntotal distance: " + totaldis + "\n all distance the Bus did: " + sumdis + "\n" + "strting date: " + start_date + "\n");
+        //}
+        #endregion
+
+        #region user
 
         #endregion
     }

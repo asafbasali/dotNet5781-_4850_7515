@@ -1,0 +1,19 @@
+﻿<Window x:Class="dotnet_5781_03._2._1_4850_7515.info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dotnet_5781_03._2._1_4850_7515"
+        mc:Ignorable="d"
+        Title="info" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="label" Content="ID" HorizontalAlignment="Left" Margin="23,25,0,0" VerticalAlignment="Top" Height="51" Width="159" FontSize="36"/>
+        <Label x:Name="IDlabel" Content="" HorizontalAlignment="Left" Margin="95,25,0,0" VerticalAlignment="Top" Height="51" Width="180" FontSize="36"/>
+        <Label x:Name="label1" Content="fuel:" HorizontalAlignment="Left" Margin="23,81,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label x:Name="label1_Copy" Content="distance:" HorizontalAlignment="Left" Margin="23,139,0,0" VerticalAlignment="Top" FontSize="36" Width="172"/>
+        <Label x:Name="label1_Copy1" Content="start time:" HorizontalAlignment="Left" Margin="23,197,0,0" VerticalAlignment="Top" Height="60" Width="172" FontSize="36"/>
+        <Label x:Name="Fuellabel" Content="" HorizontalAlignment="Left" Margin="119,88,0,0" VerticalAlignment="Top" Height="51" Width="180" FontSize="36"/>
+        <Label x:Name="Distancelabel" Content="" HorizontalAlignment="Left" Margin="186,146,0,0" VerticalAlignment="Top" Height="51" Width="180" FontSize="36"/>
+        <Label x:Name="Datelabel" Content="" HorizontalAlignment="Left" Margin="213,206,0,0" VerticalAlignment="Top" Height="51" Width="180" FontSize="36"/>
+    </Grid>
+</Window>

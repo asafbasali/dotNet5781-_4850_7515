@@ -9,7 +9,7 @@
     <Grid Margin="211,0,206,0" RenderTransformOrigin="1.688,1.11">
         <TextBox x:Name="username" HorizontalAlignment="Left" Height="52" Margin="117,190,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="151" FontSize="20"/>
         <TextBox x:Name="userpassword" HorizontalAlignment="Left" Height="52" Margin="117,272,0,0" TextWrapping="Wrap" Text="User Password" VerticalAlignment="Top" Width="151" RenderTransformOrigin="0.377,1.47" SelectionOpacity="-2" FontSize="20" TextChanged="userpassword_TextChanged"/>
-        <Button x:Name="button" Content="sign in" HorizontalAlignment="Left" Margin="133,346,0,0" VerticalAlignment="Top" Width="115" Height="47" RenderTransformOrigin="0.39,0.626" FontSize="20"/>
+        <Button x:Name="button" Content="sign in" HorizontalAlignment="Left" Margin="133,346,0,0" VerticalAlignment="Top" Width="115" Height="47" RenderTransformOrigin="0.39,0.626" FontSize="20" Click="button_Click"/>
 
     </Grid>
 </Window>

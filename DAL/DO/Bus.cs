@@ -10,7 +10,7 @@ namespace DO
         public int fuel;
         public int totaldis;
         public int sumdis = 0;
-        public int iD;
+        public string iD;
         static DateTime start_date = new DateTime();
 
     }

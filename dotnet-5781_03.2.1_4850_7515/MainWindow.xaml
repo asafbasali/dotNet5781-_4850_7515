@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dotnet_5781_03._2._1_4850_7515"
         mc:Ignorable="d"
-        Title="MainWindow" Height="656.92" Width="930.58">
+        Title="MainWindow" Height="650.781" Width="908.069">
     <Grid>
         <Grid Name ="buslist" HorizontalAlignment="Left" Height="524" Margin="10,10,0,0" VerticalAlignment="Top" Width="862">
             <ListBox x:Name="BusesList" ItemsSource="{Binding Path=buses}"  Margin="10,112,0,0" SelectionChanged="BusesList_SelectionChanged" Height="402" VerticalAlignment="Top" MouseDoubleClick="info" HorizontalAlignment="Left" Width="842">

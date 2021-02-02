@@ -10,6 +10,8 @@ namespace DAL
     public interface DALObject
     {
         #region BusLine
+        void AddBusLine(BusLine busline);
+        void RemoveBusLine(int ID);
         DO.BusLine GetBusLine(int ID);
         void UpdateBusLine(int ID, BusLine newbusline);
         void RemoveStationFromBusLine(int StationNumber, int ID);
@@ -26,6 +28,11 @@ namespace DAL
         void RemoveBus(string ID);
         //bool IsBusExist(string ID);
 
+        #endregion
+
+        #region User
+        void AddUser(DO.User user);
+        void RemoveUser(string UserName, string Password);
         #endregion
     }
 }

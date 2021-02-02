@@ -14,6 +14,7 @@ namespace DS
         public static List<DO.BusLine> Lines = new List<DO.BusLine>();
         public static List<DO.FolowingStation> tracking_stations = new List<DO.FolowingStation>();
         public static List<DO.Bus> Buses = new List<DO.Bus>();
+        public static List<DO.User> Users = new List<User>();
 
         static DataBase()
         {
@@ -49,6 +50,5 @@ namespace DS
                 }
             };
         }
-
     }
 }

@@ -9,6 +9,44 @@ namespace DAL
     public class IDAL : DALObject
     {
         #region BusLine
+        void DALObject.AddBusLine(DO.BusLine busline)
+        {
+            bool B = false;
+            foreach (DO.BusLine bus in DS.DataBase.Lines)
+            {
+                if (bus.busnumber == busline.busnumber)
+                {
+                    B = true;
+                }
+            }
+            if (!B)
+            {
+                DS.DataBase.Lines.Add(busline);
+            }
+            else
+            {
+                //throw exeption
+            }
+        }
+        void DALObject.RemoveBusLine(int ID)
+        {
+            DO.BusLine temp = new DO.BusLine();
+            foreach (DO.BusLine busline in DS.DataBase.Lines)
+            {
+                if (busline.busnumber == ID)
+                {
+                    temp = busline;
+                }
+            }
+            if (temp != null)
+            {
+                DS.DataBase.Lines.Remove(temp);
+            }
+            else
+            {
+                //throw exeption
+            }
+        }
         DO.BusLine DALObject.GetBusLine(int ID)
         {
             try
@@ -115,7 +153,6 @@ namespace DAL
             {
                 //throw exeption
             }
-            
         }
 
         void DALObject.RemoveBus(string ID)
@@ -156,7 +193,44 @@ namespace DAL
         #endregion
 
         #region user
-
+        void DALObject.AddUser(DO.User User)
+        {
+            bool B = false;
+            foreach (DO.User user in DS.DataBase.Users)
+            {
+                if (User.UserName == user.UserName)
+                {
+                    B = true;
+                }
+            }
+            if (!B)
+            {
+                DS.DataBase.Users.Add(User);
+            }
+            else
+            {
+                //throw exeption
+            }
+        }
+        void DALObject.RemoveUser(string UserName, string Password)
+        {
+            DO.User temp = new DO.User();
+            foreach (DO.User user in DS.DataBase.Users)
+            {
+                if (user.UserName == UserName)
+                {
+                    temp = user;
+                }
+            }
+            if (temp != null && temp.UserPassword == Password)
+            {
+                DS.DataBase.Users.Remove(temp);
+            }
+            else
+            {
+                //throw exeption
+            }
+        }
         #endregion
     }
 }

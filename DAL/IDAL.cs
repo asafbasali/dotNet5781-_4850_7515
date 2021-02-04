@@ -63,7 +63,7 @@ namespace DAL
             {
                 throw;
             }
-            return new DO.BusLine();
+            return null;
         }
         void DALObject.AddStationToBusLine(DO.Station NewBusStation, int ID)
         {
@@ -111,7 +111,6 @@ namespace DAL
                 Console.WriteLine("there is no bus with this ID");
             }
         }
-
         #endregion
 
         #region Station
@@ -119,7 +118,17 @@ namespace DAL
         {
             DS.DataBase.Stations.Add(newsstation);
         }
-
+        DO.Station DALObject.GetStation(int ID)
+        {
+            foreach (DO.Station station in DS.DataBase.Stations)
+            {
+                if (station.sBusStationKey == ID)
+                {
+                    return station;
+                }
+            }
+            return null;
+        }
         void DALObject.removeStation(int ID)
         {
             foreach (DO.Station station in DS.DataBase.Stations)
@@ -134,7 +143,6 @@ namespace DAL
         #endregion
 
         #region Bus
-        
         void DALObject.AddBus(DO.Bus Bus)
         {
             bool B = false;
@@ -154,7 +162,6 @@ namespace DAL
                 //throw exeption
             }
         }
-
         void DALObject.RemoveBus(string ID)
         {
             DO.Bus B = new DO.Bus();
@@ -174,22 +181,28 @@ namespace DAL
                 //throw exeption
             }
         }
-        //bool DALObject.IsBusExist(string ID)
-        //{
-        //    foreach (DO.Bus bus in DS.DataBase.Buses)
-        //    {
-        //        if (bus.iD == ID)
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
-
-        //public void Print_deatails()
-        //{
-        //    Console.WriteLine("\nID " + iD + " " + "\ntotal distance: " + totaldis + "\n all distance the Bus did: " + sumdis + "\n" + "strting date: " + start_date + "\n");
-        //}
+        bool DALObject.IsBusExist(string ID)
+        {
+            foreach (DO.Bus bus in DS.DataBase.Buses)
+            {
+                if (bus.iD == ID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        DO.Bus DALObject.GetBus(string ID)
+        {
+            foreach (DO.Bus Bus in DS.DataBase.Buses)
+            {
+                if (Bus.iD == ID)
+                {
+                    return Bus;
+                }
+            }
+            return null;
+        }
         #endregion
 
         #region user
@@ -230,6 +243,17 @@ namespace DAL
             {
                 //throw exeption
             }
+        }
+        DO.User DALObject.GetUser(string name)
+        {
+            foreach (DO.User user in DS.DataBase.Users)
+            {
+                if (user.name == name)
+                {
+                    return user;
+                }
+            }
+        return null;
         }
         #endregion
     }

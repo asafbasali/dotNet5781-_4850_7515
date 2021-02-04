@@ -21,18 +21,20 @@ namespace DAL
         #region Station
         void AddStation(Station newsstation);
         void removeStation(int ID);
+        DO.Station GetStation(int ID);
         #endregion
 
         #region Bus
         void AddBus(DO.Bus Bus);
         void RemoveBus(string ID);
-        //bool IsBusExist(string ID);
-
+        bool IsBusExist(string ID);
+        DO.Bus GetBus(string ID);
         #endregion
 
         #region User
         void AddUser(DO.User user);
         void RemoveUser(string UserName, string Password);
+        DO.User GetUser(string name);
         #endregion
     }
 }

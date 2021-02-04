@@ -22,33 +22,12 @@ namespace DS
         }
         static void Start()
         {
-            Random R = new Random();
-            Stations = new List<Station>
-            {
-                new Station
-                {
-                    sBusStationKey = 20,
-                    Latitude = R.Next(-90, 90),
-                    Longitude = R.Next(-180, 180),
-                    Busstationaddres = "Avtlion"
-                },
-                new Station
-                {
-                    sBusStationKey = 23,
-                    Latitude = R.Next(-90, 90),
-                    Longitude = R.Next(-180, 180),
-                    Busstationaddres = "Shamay"
-                }
-            };
-            Lines = new List<BusLine>
-            {
-                new BusLine
-                {
-                    Id = 1234,
-                    busnumber = 279,
-                    Idfirststation = 1
-                }
-            };
+            #region Bus
+            Buses.Add(new DO.Bus(2000, 0, "123-123-123"));
+            Buses.Add(new DO.Bus(2000, 0, "123-123-124"));
+            Buses.Add(new DO.Bus(2000, 0, "123-123-125"));
+            #endregion
+
         }
     }
 }

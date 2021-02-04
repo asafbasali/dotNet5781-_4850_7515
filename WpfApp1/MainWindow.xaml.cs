@@ -36,8 +36,34 @@ namespace PL
             newListWindow window = new newListWindow();
             DO.Bus bus = new DO.Bus();
             bus = bl.GetBus("123-123-123");
-            window.MyLabel.Content = bus.fuel;
+            window.MyLabel.Content = bus.iD;
             window.ShowDialog();
         }
+
+        #region textinputevenst
+        private void disaper(object sender, MouseEventArgs e)
+        {
+            this.username.Text = "";
+        }
+        private void showagain(object sender, MouseEventArgs e)
+        {
+            if (this.userpassword.Text != "")
+            {
+                this.username.Text = "User Name";
+            }
+        }
+        private void disaper1(object sender, MouseEventArgs e)
+        {
+            this.userpassword.Text = "";
+        }
+        private void showagain1(object sender, MouseEventArgs e)
+        {
+            if (this.userpassword.Text != "")
+            {
+                this.username.Text = "User Password";
+            }
+        }
+        #endregion
+
     }
 }

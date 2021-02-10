@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Bus Managment" Height="507" Width="800">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="assets\icons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <BitmapImage x:Key="Image1" UriSource="/Assets/busegd.jpg"/>
+            <BitmapImage x:Key="Image2" UriSource="/Assets/busdan.jpg"/>
+            <BitmapImage x:Key="Image3" UriSource="/Assets/buskavim.jpg"/>
+            <BitmapImage x:Key="Image4" UriSource="/Assets/busafikim.jpg"/>
+
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -52,7 +58,7 @@
                 BorderThickness="2"
                 CornerRadius="4"
                 Margin="0,10">
-                
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
@@ -83,7 +89,7 @@
                 BorderBrush="Silver"
                 BorderThickness="2"
                 CornerRadius="4"
-                Margin="0,10">
+                Margin="0,0,0,20">
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -110,6 +116,72 @@
                         FontWeight="SemiBold"/>
                 </Grid>
             </Border>
+          
+            <!--Login Button-->
+            <Button
+                 Background="MediumBlue"
+                 BorderThickness="0"
+                 Content="Login In"                  
+                 Foreground="White"
+                 Height="50" Click="Button_Click"/>
+
+
         </StackPanel>
+        <!--Forgot your passworb-->
+        <TextBlock
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Margin="0,20">
+            <Hyperlink
+                TextDecorations="None">
+                Forgot your password?
+            </Hyperlink>
+        </TextBlock>
+        
+        <!--Image Transition-->
+        <Image
+            Source="{StaticResource Image1}"
+            Stretch="UniformToFill">
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            
+                            <!--FadeOut-->
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="Opacity"
+                                SpeedRatio=".5"
+                                From="1"
+                                To=".5"
+                                RepeatBehavior="Forever"/>
+                           
+                            <!--FadeOut-->
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="Opacity"
+                                SpeedRatio=".5"
+                                From=".5"
+                                To="1"
+                                RepeatBehavior="Forever"/>
+                            <ObjectAnimationUsingKeyFrames
+                                Storyboard.TargetProperty="Source"
+                                Duration="0:0:8"
+                                RepeatBehavior="Forever">
+                                <DiscreteObjectKeyFrame
+                                    Value="{StaticResource Image2}"
+                                    KeyTime="0:0:2"/>
+                                <DiscreteObjectKeyFrame
+                                    Value="{StaticResource Image3}"
+                                    KeyTime="0:0:4"/>
+                                <DiscreteObjectKeyFrame
+                                    Value="{StaticResource Image4}"
+                                    KeyTime="0:0:6"/>
+
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
     </Grid>
 </Window>

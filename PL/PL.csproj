@@ -119,5 +119,17 @@
       <Name>BL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\busegd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\busdan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\busafikim.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\buskavim.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,11 +8,12 @@ namespace DAL
 {
     public class IDAL : DALObject
     {
+        DS.DataBase ds = new DS.DataBase();
         #region BusLine
         void DALObject.AddBusLine(DO.BusLine busline)
         {
             bool B = false;
-            foreach (DO.BusLine bus in DS.DataBase.Lines)
+            foreach (DO.BusLine bus in ds.Lines)
             {
                 if (bus.busnumber == busline.busnumber)
                 {
@@ -21,7 +22,7 @@ namespace DAL
             }
             if (!B)
             {
-                DS.DataBase.Lines.Add(busline);
+                ds.Lines.Add(busline);
             }
             else
             {
@@ -31,7 +32,7 @@ namespace DAL
         void DALObject.RemoveBusLine(int ID)
         {
             DO.BusLine temp = new DO.BusLine();
-            foreach (DO.BusLine busline in DS.DataBase.Lines)
+            foreach (DO.BusLine busline in ds.Lines)
             {
                 if (busline.busnumber == ID)
                 {
@@ -40,7 +41,7 @@ namespace DAL
             }
             if (temp != null)
             {
-                DS.DataBase.Lines.Remove(temp);
+                ds.Lines.Remove(temp);
             }
             else
             {
@@ -51,7 +52,7 @@ namespace DAL
         {
             try
             {
-                foreach (DO.BusLine Bus in DS.DataBase.Lines)
+                foreach (DO.BusLine Bus in ds.Lines)
                 {
                     if (Bus.Id == ID)
                     {
@@ -67,7 +68,7 @@ namespace DAL
         }
         void DALObject.AddStationToBusLine(DO.Station NewBusStation, int ID)
         {
-            foreach (DO.BusLine Busline in DS.DataBase.Lines)
+            foreach (DO.BusLine Busline in ds.Lines)
             {
                 if (Busline.Id == ID)
                 {
@@ -77,7 +78,7 @@ namespace DAL
         }
         void DALObject.RemoveStationFromBusLine(int StationNumber, int ID)
         {
-            foreach (DO.BusLine Busline in DS.DataBase.Lines)
+            foreach (DO.BusLine Busline in ds.Lines)
             {
                 if (Busline.Id == ID)
                 {
@@ -95,7 +96,7 @@ namespace DAL
         void DALObject.UpdateBusLine(int ID, DO.BusLine newbusline)
         {
             DO.BusLine temp = new DO.BusLine();
-            foreach (DO.BusLine bus in DS.DataBase.Lines)
+            foreach (DO.BusLine bus in ds.Lines)
             {
                 if (bus.Id == ID)
                 {
@@ -111,16 +112,20 @@ namespace DAL
                 Console.WriteLine("there is no bus with this ID");
             }
         }
+        List<DO.BusLine> DALObject.GetallBusLines()
+        {
+            return ds.Lines;   
+        }
         #endregion
 
         #region Station
         void DALObject.AddStation(DO.Station newsstation)
         {
-            DS.DataBase.Stations.Add(newsstation);
+            ds.Stations.Add(newsstation);
         }
         DO.Station DALObject.GetStation(int ID)
         {
-            foreach (DO.Station station in DS.DataBase.Stations)
+            foreach (DO.Station station in ds.Stations)
             {
                 if (station.sBusStationKey == ID)
                 {
@@ -131,14 +136,18 @@ namespace DAL
         }
         void DALObject.removeStation(int ID)
         {
-            foreach (DO.Station station in DS.DataBase.Stations)
+            foreach (DO.Station station in ds.Stations)
             {
                 if (station.sBusStationKey == ID)
                 {
-                    DS.DataBase.Stations.Remove(station);
+                    ds.Stations.Remove(station);
                     break;
                 }
             }
+        }
+        List<DO.Station> DALObject.GetallStations()
+        {
+            return ds.Stations;
         }
         #endregion
 
@@ -146,7 +155,7 @@ namespace DAL
         void DALObject.AddBus(DO.Bus Bus)
         {
             bool B = false;
-            foreach (DO.Bus bus in DS.DataBase.Buses)
+            foreach (DO.Bus bus in ds.Buses)
             {
                 if (bus.iD == Bus.iD)
                 {
@@ -155,7 +164,7 @@ namespace DAL
             }
             if (B == false)
             {
-                DS.DataBase.Buses.Add(Bus);
+                ds.Buses.Add(Bus);
             }
             else
             {
@@ -165,7 +174,7 @@ namespace DAL
         void DALObject.RemoveBus(string ID)
         {
             DO.Bus B = new DO.Bus();
-            foreach (DO.Bus bus in DS.DataBase.Buses)
+            foreach (DO.Bus bus in ds.Buses)
             {
                 if (bus.iD == ID)
                 {
@@ -174,7 +183,7 @@ namespace DAL
             }
             if (B == null)
             {
-                DS.DataBase.Buses.Remove(B);
+                ds.Buses.Remove(B);
             }
             else
             {
@@ -183,7 +192,7 @@ namespace DAL
         }
         bool DALObject.IsBusExist(string ID)
         {
-            foreach (DO.Bus bus in DS.DataBase.Buses)
+            foreach (DO.Bus bus in ds.Buses)
             {
                 if (bus.iD == ID)
                 {
@@ -194,7 +203,7 @@ namespace DAL
         }
         DO.Bus DALObject.GetBus(string ID)
         {
-            foreach (DO.Bus Bus in DS.DataBase.Buses)
+            foreach (DO.Bus Bus in ds.Buses)
             {
                 if (Bus.iD == ID)
                 {
@@ -203,13 +212,17 @@ namespace DAL
             }
             return null;
         }
+        List<DO.Bus> DALObject.GetallBuses()
+        {
+            return ds.Buses;
+        }
         #endregion
 
         #region user
         void DALObject.AddUser(DO.User User)
         {
             bool B = false;
-            foreach (DO.User user in DS.DataBase.Users)
+            foreach (DO.User user in ds.Users)
             {
                 if (User.UserName == user.UserName)
                 {
@@ -218,7 +231,7 @@ namespace DAL
             }
             if (!B)
             {
-                DS.DataBase.Users.Add(User);
+                ds.Users.Add(User);
             }
             else
             {
@@ -228,7 +241,7 @@ namespace DAL
         void DALObject.RemoveUser(string UserName, string Password)
         {
             DO.User temp = new DO.User();
-            foreach (DO.User user in DS.DataBase.Users)
+            foreach (DO.User user in ds.Users)
             {
                 if (user.UserName == UserName)
                 {
@@ -237,7 +250,7 @@ namespace DAL
             }
             if (temp != null && temp.UserPassword == Password)
             {
-                DS.DataBase.Users.Remove(temp);
+                ds.Users.Remove(temp);
             }
             else
             {
@@ -246,7 +259,7 @@ namespace DAL
         }
         DO.User DALObject.GetUser(string name)
         {
-            foreach (DO.User user in DS.DataBase.Users)
+            foreach (DO.User user in ds.Users)
             {
                 if (user.name == name)
                 {

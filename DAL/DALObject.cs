@@ -16,12 +16,14 @@ namespace DAL
         void UpdateBusLine(int ID, BusLine newbusline);
         void RemoveStationFromBusLine(int StationNumber, int ID);
         void AddStationToBusLine(Station NewBusStation, int ID);
+        List<BusLine> GetallBusLines();
         #endregion
 
         #region Station
         void AddStation(Station newsstation);
         void removeStation(int ID);
         DO.Station GetStation(int ID);
+        List<Station> GetallStations();
         #endregion
 
         #region Bus
@@ -29,6 +31,7 @@ namespace DAL
         void RemoveBus(string ID);
         bool IsBusExist(string ID);
         DO.Bus GetBus(string ID);
+        List<Bus> GetallBuses();
         #endregion
 
         #region User

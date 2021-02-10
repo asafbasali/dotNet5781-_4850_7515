@@ -7,15 +7,27 @@ using System.Threading.Tasks;
 
 namespace DS
 {
-    public static class DataBase
+    public class DataBase
     {
-        public static List<DO.Station> Stations = new List<DO.Station>();
-        public static List<DO.StationOfBus> StationLines = new List<DO.StationOfBus>();
-        public static List<DO.BusLine> Lines = new List<DO.BusLine>();
-        public static List<DO.FolowingStation> tracking_stations = new List<DO.FolowingStation>();
-        public static List<DO.Bus> Buses = new List<DO.Bus>();
-        public static List<DO.User> Users = new List<User>();
+        public List<DO.Station> Stations = new List<DO.Station>();
+        public List<DO.StationOfBus> StationLines = new List<DO.StationOfBus>();
+        public List<DO.BusLine> Lines = new List<DO.BusLine>();
+        public List<DO.FolowingStation> tracking_stations = new List<DO.FolowingStation>();
+        public List<DO.Bus> Buses = new List<DO.Bus>();
+        public List<DO.User> Users = new List<User>();
 
+        private static DataBase instance;
+        public static DataBase Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DataBase();
+                };
+                return instance;
+            } 
+        }
         static DataBase()
         {
             Start();

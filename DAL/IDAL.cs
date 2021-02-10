@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DS;
 namespace DAL
 {
     public class IDAL : DALObject
     {
-        DS.DataBase ds = new DS.DataBase();
+        DS.DataBase ds = DS.DataBase.Instance;
         #region BusLine
         void DALObject.AddBusLine(DO.BusLine busline)
         {
@@ -136,15 +136,25 @@ namespace DAL
         }
         void DALObject.removeStation(int ID)
         {
+            DO.Station station1 = new DO.Station();
             foreach (DO.Station station in ds.Stations)
             {
                 if (station.sBusStationKey == ID)
                 {
+                    station1 = station;
                     ds.Stations.Remove(station);
                     break;
                 }
+                foreach (DO.BusLine Line in ds.Lines)
+                {
+                    if (Line.Stations.Contains(station1))
+                    {
+                        Line.Stations.Remove(station1);
+                    }
+                }
             }
         }
+
         List<DO.Station> DALObject.GetallStations()
         {
             return ds.Stations;

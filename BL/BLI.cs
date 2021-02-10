@@ -9,23 +9,21 @@ namespace BL
 {
    public class BLI
     {
+        //DS.DataBase ds = DS.DataBase.Instance;
         DALObject dl = new IDAL();
         #region AddFunctions
         void BLObject.AddBus(int _fuel, int _sumdis, string ID)
         {
             dl.AddBus(new DO.Bus(_fuel,_sumdis,ID));
         }
-
         void BLObject.AddBusLine(int _Id, int _busnumber, int _Idfirststation, int _Idlaststation)
         {
             dl.AddBusLine(new DO.BusLine(_Id,_busnumber,_Idfirststation,_Idlaststation));
         }
-
         void BLObject.AddStation(int _sBusStationKey, double _Latitude, double _Longitude, string _Busstationaddres)
         {
             dl.AddStation(new DO.Station(_sBusStationKey,_Latitude,_Longitude,_Busstationaddres));
         }
-
         void BLObject.AddUser(string _UserName, string _UserPassword)
         {
             dl.AddUser(new DO.User(_UserName,_UserPassword));
@@ -52,13 +50,7 @@ namespace BL
         #endregion
 
         #region UpdaeFunctions
-        void BLObject.Updatebuslines(int stationnum)
-        {
-            foreach (DO.BusLine busLine in DS.DataBase.Lines)
-            {
-                dl.RemoveStationFromBusLine(busLine.busnumber, stationnum);
-            }
-        }
+
         #endregion
 
         #region GetFunctions

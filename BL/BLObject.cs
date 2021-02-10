@@ -24,7 +24,7 @@ namespace BL
         #endregion
 
         #region UpdateFunctions
-        void Updatebuslines(int station);
+
         #endregion
 
         #region GetFunctions

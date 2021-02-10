@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8217A98C-5581-4800-AAA8-E6A7C4FB40C5}</ProjectGuid>
+    <ProjectGuid>{6FB139C9-B91C-4755-97F0-FD3BE162F3C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BL</RootNamespace>
@@ -43,10 +43,6 @@
   <ItemGroup>
     <Compile Include="BLI.cs" />
     <Compile Include="BLObject.cs" />
-    <Compile Include="BO\Bus.cs" />
-    <Compile Include="BO\BusLine.cs" />
-    <Compile Include="BO\Station.cs" />
-    <Compile Include="BO\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

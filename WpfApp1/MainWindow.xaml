@@ -1,16 +1,15 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+﻿<Window x:Class="PL.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="450">
-    <Grid Margin="0,0,1.6,0.4" RenderTransformOrigin="1.688,1.11" Background="#8e44ad">
-        <TextBox x:Name="username" Height="52" Margin="105,194,0,0" TextWrapping="Wrap" Background="" Text="User Name" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Left" Width="205" TextChanged="username_TextChanged"/>
-        <TextBox x:Name="userpassword" Height="52" Margin="105,271,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" RenderTransformOrigin="0.377,1.47" SelectionOpacity="-2" FontSize="20" TextChanged="userpassword_TextChanged" HorizontalAlignment="Left" Width="205"/>
-        <Button x:Name="button" Content="sign in" Margin="157,344,183,0" VerticalAlignment="Top" Height="47" Width="100" RenderTransformOrigin="0.39,0.626" FontSize="20"/>
-        <Image Height="139" VerticalAlignment="Top" Margin="0,25,10,0" Source="תמונה.jpg" RenderTransformOrigin="0.51,0.99"/>
+        Title="MainWindow" Height="450" Width="800" Icon="for_c_project.png">
+    <Grid Margin="211,0,206,0" RenderTransformOrigin="1.688,1.11">
+        <TextBox x:Name="username" HorizontalAlignment="Left" Height="52" Margin="117,190,0,0" TextWrapping="Wrap" Text="User Name" VerticalAlignment="Top" Width="151" FontSize="20" MouseLeave="showagain" MouseEnter="disaper"/>
+        <TextBox x:Name="userpassword" HorizontalAlignment="Left" Height="52" Margin="117,272,0,0" TextWrapping="Wrap" Text="User Password" VerticalAlignment="Top" Width="151" RenderTransformOrigin="0.377,1.47" SelectionOpacity="-2" FontSize="20" TextChanged="userpassword_TextChanged" MouseEnter="disaper1" MouseLeave="showagain1"/>
+        <Button x:Name="button" Content="sign in" HorizontalAlignment="Left" Margin="133,346,0,0" VerticalAlignment="Top" Width="115" Height="47" RenderTransformOrigin="0.39,0.626" FontSize="20" Click="button_Click"/>
 
     </Grid>
 </Window>

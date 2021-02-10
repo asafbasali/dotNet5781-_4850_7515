@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BL;
 
 namespace PL
 {
@@ -20,6 +21,7 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
+        BL.BLI bl = new BL.BLI();
         public MainWindow()
         {
             InitializeComponent();

@@ -6,7 +6,7 @@ using DS;
 
 namespace BL
 {
-    class BLI
+    public class BLI
     {
         #region BusLine
         DO.BusLine GetBusLine(int ID)

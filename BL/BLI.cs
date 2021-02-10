@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    class BLI
+   public class BLI
     {
         DALObject dl = new IDAL();
         #region AddFunctions

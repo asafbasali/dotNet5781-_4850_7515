@@ -25,6 +25,7 @@ namespace PL
         public MainWindow()
         {
             InitializeComponent();
+                    
         }
         private void userpassword_TextChanged(object sender, TextChangedEventArgs e)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class BLI : BLObject
+    class BLI
     {
         //DS.DataBase ds = DS.DataBase.Instance;
         DALObject dl = new IDAL();

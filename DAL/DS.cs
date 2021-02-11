@@ -48,6 +48,7 @@ namespace DS
 
             #region users
             Users.Add(new User("levi", "770"));
+            Users.Add(new User("Asaf", "771"));
             #endregion
 
         }

@@ -11,7 +11,7 @@ namespace BL
     {
         #region AddFunctions
         void AddBus(int _fuel, int _sumdis, string ID);
-        void AddBusLine(int _Id, int _busnumber, int _Idfirststation, int _Idlaststation);
+        void AddBusLine(int _Id, string _busnumber, int _Idfirststation, int _Idlaststation);
         void AddStation(int _sBusStationKey, double _Latitude, double _Longitude, string _Busstationaddres);
         void AddUser(string _UserName, string _UserPassword);
         #endregion
@@ -24,7 +24,7 @@ namespace BL
         #endregion
 
         #region UpdateFunctions
-
+        bool checkifuserexist(string username, string userpassword);
         #endregion
 
         #region GetFunctions

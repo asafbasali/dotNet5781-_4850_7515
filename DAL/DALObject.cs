@@ -15,7 +15,6 @@ namespace DAL
         DO.BusLine GetBusLine(int ID);
         void UpdateBusLine(int ID, BusLine newbusline);
         void RemoveStationFromBusLine(int StationNumber, int ID);
-        void AddStationToBusLine(Station NewBusStation, int ID);
         List<BusLine> GetallBusLines();
         #endregion
 
@@ -38,6 +37,7 @@ namespace DAL
         void AddUser(DO.User user);
         void RemoveUser(string UserName, string Password);
         DO.User GetUser(string name);
+        bool Checkifuserexsist(string username, string password);
         #endregion
     }
 }

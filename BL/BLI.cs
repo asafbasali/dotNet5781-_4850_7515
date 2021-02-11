@@ -1,13 +1,8 @@
 ﻿using DAL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL
 {
-   public class BLI
+   public class BLI : BLObject
     {
         //DS.DataBase ds = DS.DataBase.Instance;
         DALObject dl = new IDAL();
@@ -16,7 +11,7 @@ namespace BL
         {
             dl.AddBus(new DO.Bus(_fuel,_sumdis,ID));
         }
-        void BLObject.AddBusLine(int _Id, int _busnumber, int _Idfirststation, int _Idlaststation)
+        void BLObject.AddBusLine(int _Id, string _busnumber, int _Idfirststation, int _Idlaststation)
         {
             dl.AddBusLine(new DO.BusLine(_Id,_busnumber,_Idfirststation,_Idlaststation));
         }
@@ -50,7 +45,10 @@ namespace BL
         #endregion
 
         #region UpdaeFunctions
-
+        bool BLObject.checkifuserexist(string username,string password)
+        {
+            return dl.Checkifuserexsist(username, password);
+        }
         #endregion
 
         #region GetFunctions

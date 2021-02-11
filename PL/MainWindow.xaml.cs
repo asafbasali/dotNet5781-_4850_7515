@@ -21,7 +21,7 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        BL.BLI bl = new BL.BLI();
+        BL.BLObject bl = new BL.BLI();
         public MainWindow()
         {
             InitializeComponent();
@@ -29,7 +29,22 @@ namespace PL
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (bl.checkifuserexist(this.emailbox.Text, this.passbox.Password))
+            {
+                MessageBox.Show("lucifer is noob!!!!!!!!!!1");
+            }
+            else
+            {
+                MessageBox.Show("Name or Password are Incorrect");
+            }
+        }
+        private void click_delete(object sender, MouseEventArgs e)
+        {
+            this.emailbox.Text = "";
+        }
+        private void click_delete_pass(object sender, MouseEventArgs e)
+        {
+            this.passbox.Password = "";
         }
     }
 }

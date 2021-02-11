@@ -75,13 +75,13 @@
                         Fill="Silver"/>
 
                     <!--email textbox-->
-                    <TextBox
+                    <TextBox x:Name="emailbox"
                         BorderThickness="0"
                         Foreground = "Silver"
                         Grid.Column="1"
                         Text="Email"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold"/>
+                        FontWeight="SemiBold" MouseEnter="click_delete"/>
                 </Grid>
             </Border>
             <Border
@@ -107,13 +107,13 @@
                         Fill="Silver"/>
 
                     <!--password textbox-->
-                    <PasswordBox
+                    <PasswordBox x:Name="passbox"
                         BorderThickness="0"
                         Foreground = "Silver"
                         Grid.Column="1"
                         Password="Password"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold"/>
+                        FontWeight="SemiBold" MouseEnter="click_delete_pass"/>
                 </Grid>
             </Border>
           

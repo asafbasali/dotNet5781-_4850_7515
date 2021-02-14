@@ -31,7 +31,7 @@ namespace PL
         {
             if (bl.checkifuserexist(this.emailbox.Text, this.passbox.Password))
             {
-                MessageBox.Show("lucifer is noob!!!!!!!!!!1");
+                MessageBox.Show("you are in the system!");
             }
             else
             {
@@ -45,6 +45,20 @@ namespace PL
         private void click_delete_pass(object sender, MouseEventArgs e)
         {
             this.passbox.Password = "";
+        }
+        private void click_add(object sender, MouseEventArgs e)
+        {
+            if (this.emailbox.Text == "")
+            {
+                this.emailbox.Text = "Email";
+            }
+        }
+        private void click_add_pass(object sender, MouseEventArgs e)
+        {
+            if (this.passbox.Password == "")
+            {
+                this.passbox.Password = "Password";
+            }
         }
     }
 }

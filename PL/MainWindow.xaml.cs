@@ -31,7 +31,7 @@ namespace PL
         {
             if (bl.checkifuserexist(this.emailbox.Text, this.passbox.Password))
             {
-                MessageBox.Show("lucifer is nod!!!!!!!!!!1");
+                MessageBox.Show("you are in the system!");
             }
             else
             {
@@ -46,10 +46,21 @@ namespace PL
         {
             this.passbox.Password = "";
         }
-
         private void emailbox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void opennewwindow(object sender, MouseEventArgs e)
+        {
+            SignUp sign = new SignUp();
+            sign.ShowDialog();
+        }
+
+        private void opennewwindow(object sender, RoutedEventArgs e)
+        {
+            SignUp sign = new SignUp();
+            sign.ShowDialog();
         }
     }
 }

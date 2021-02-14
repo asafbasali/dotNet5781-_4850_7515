@@ -19,7 +19,7 @@
 
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="SignUp1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="73.392"/>
             <ColumnDefinition Width="426.608"/>
@@ -46,11 +46,8 @@
             </Ellipse>
 
             <!--Sine Up-->
-            <TextBlock
-                Margin="0,30,0,0">
-                Need an account? <Hyperlink
-                    TextDecorations="None">SingnUp</Hyperlink>
-            </TextBlock>
+            <Button x:Name="signup"
+                Margin="0,30,0,0" MouseLeftButtonDown="opennewwindow" Background="White" Click="opennewwindow"><Run Text="Need an account? " /></Button>
 
             <!--Email & Password Text Box-->
             <Border
@@ -128,16 +125,16 @@
 
         </StackPanel>
         <!--Forgot your passworb-->
-        <TextBlock x:Name="forgotyourpass"
+        <Button x:Name="forgotyourpass"
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
-            Margin="86,0,86,20">
+            Margin="62,0,86,20" Width="144" Background="White">
             <Hyperlink
                 TextDecorations="None">
                 Forgot your password?
             </Hyperlink>
-        </TextBlock>
+        </Button>
 
         <!--Image Transition-->
         <Image

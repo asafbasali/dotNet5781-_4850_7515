@@ -21,15 +21,16 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="73.392"/>
+            <ColumnDefinition Width="426.608"/>
             <!--Image transition-->
             <ColumnDefinition/>
             <!--login & password Section-->
         </Grid.ColumnDefinitions>
 
         <StackPanel 
-            Grid.Column="1"
-            Margin="50">
+            Grid.Column="2"
+            Margin="47,59,54,41">
 
             <!--profile picture-->
             <Ellipse 
@@ -78,10 +79,9 @@
                     <TextBox x:Name="emailbox"
                         BorderThickness="0"
                         Foreground = "Silver"
-                        Grid.Column="1"
                         Text="Email"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold" MouseEnter="click_delete"/>
+                        FontWeight="SemiBold" MouseEnter="click_delete" TextChanged="emailbox_TextChanged" Margin="0.4,11,-0.4,19.4" HorizontalAlignment="Left" Width="140" Grid.Column="1"/>
                 </Grid>
             </Border>
             <Border
@@ -116,7 +116,7 @@
                         FontWeight="SemiBold" MouseEnter="click_delete_pass"/>
                 </Grid>
             </Border>
-          
+
             <!--Login Button-->
             <Button
                  Background="MediumBlue"
@@ -128,26 +128,26 @@
 
         </StackPanel>
         <!--Forgot your passworb-->
-        <TextBlock
-            Grid.Column="1"
+        <TextBlock x:Name="forgotyourpass"
+            Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
-            Margin="0,20">
+            Margin="86,0,86,20">
             <Hyperlink
                 TextDecorations="None">
                 Forgot your password?
             </Hyperlink>
         </TextBlock>
-        
+
         <!--Image Transition-->
         <Image
             Source="{StaticResource Image1}"
-            Stretch="UniformToFill">
+            Stretch="UniformToFill" Grid.ColumnSpan="2">
             <Image.Triggers>
                 <EventTrigger RoutedEvent="Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            
+
                             <!--FadeOut-->
                             <DoubleAnimation
                                 Storyboard.TargetProperty="Opacity"
@@ -155,7 +155,7 @@
                                 From="1"
                                 To=".5"
                                 RepeatBehavior="Forever"/>
-                           
+
                             <!--FadeOut-->
                             <DoubleAnimation
                                 Storyboard.TargetProperty="Opacity"

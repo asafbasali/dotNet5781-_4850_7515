@@ -38,6 +38,7 @@ namespace PL
                 MessageBox.Show("Name or Password are Incorrect");
             }
         }
+        #region boxes
         private void click_delete(object sender, MouseEventArgs e)
         {
             this.emailbox.Text = "";
@@ -62,5 +63,22 @@ namespace PL
             SignUp sign = new SignUp();
             sign.ShowDialog();
         }
+
+        private void click_add(object sender, MouseEventArgs e)
+        {
+            if (this.emailbox.Text == "")
+            {
+                this.emailbox.Text = "Email";
+            }
+        }
+
+        private void click_add_pass(object sender, MouseEventArgs e)
+        {
+            if (this.passbox.Password == "")
+            {
+                this.passbox.Password = "Password";
+            }
+        }
+        #endregion
     }
 }

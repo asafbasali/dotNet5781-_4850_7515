@@ -19,9 +19,16 @@ namespace PL
     /// </summary>
     public partial class SignUp : Window
     {
+        BL.BLObject bl = new BL.BLI();
         public SignUp()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            bl.AddUser(this.emailbox1.Text, this.passbox2.Password);
+            MessageBox.Show("you are sgined up now");
         }
     }
 }

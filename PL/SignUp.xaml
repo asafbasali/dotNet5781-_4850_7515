@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="SignUp" Height="585.484" Width="800">
+        Title="SignUp" Height="610.666" Width="476.41">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,7 +14,7 @@
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid Margin="0,0,3.6,0">
+    <Grid Margin="0,0,4,0" Height="554" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0"/>
             <ColumnDefinition Width="0"/>
@@ -71,7 +71,7 @@
                         Foreground = "Silver"
                         Text="Email"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold" Margin="0.4,11,-0.4,19.4" HorizontalAlignment="Left" Width="140" Grid.Column="1"/>
+                        FontWeight="SemiBold" Margin="0,11,0,19" HorizontalAlignment="Left" Width="348" Grid.Column="1"/>
                 </Grid>
             </Border>
             <Grid Margin="0,0,0.4,0">
@@ -155,7 +155,7 @@
                     FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="0.4,15,0,15.4"/>
                 </Grid>
             </Border>
-            <Button x:Name="button" Content="Button" Margin="0,0,247,0" Height="57"/>
+            <Button x:Name="button" Content="Button" Margin="0,0,247,0" Height="57" Click="button_Click"/>
             <!--Login Button-->
             <!--Login Button-->
         </StackPanel>

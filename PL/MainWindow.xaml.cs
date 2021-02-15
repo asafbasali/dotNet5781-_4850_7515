@@ -62,5 +62,10 @@ namespace PL
             SignUp sign = new SignUp();
             sign.ShowDialog();
         }
+
+        private void forgotyourpass_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

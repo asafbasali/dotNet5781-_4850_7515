@@ -29,7 +29,7 @@ namespace PL
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (bl.checkifuserexist(this.emailbox.Text, this.passbox.Password))
+            if (bl.checkifuserexist(this.emailbox.Text))
             {
                 MessageBox.Show("you are in the system!");
             }

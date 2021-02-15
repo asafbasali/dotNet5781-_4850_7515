@@ -24,7 +24,7 @@ namespace BL
         #endregion
 
         #region UpdateFunctions
-        bool checkifuserexist(string username, string userpassword);
+        bool checkifuserexist(string username);
         #endregion
 
         #region GetFunctions

@@ -233,17 +233,13 @@ namespace DAL
                 //throw exeption
             }
         }
-        bool DALObject.Checkifuserexsist(string username, string password)
+        bool DALObject.Checkifuserexsist(string username)
         {
             foreach (DO.User user in DS.DataBase.Users)
             {
                 if (user.UserName == username)
                 {
-                    if (user.UserPassword == password)
-                    {
-                        return true;
-                    }
-                    return false;
+                    return true;
                 }
             }
             return false;

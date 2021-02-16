@@ -1,0 +1,33 @@
+﻿<Window x:Class="PL.MainBus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="MainBus" Height="450" Width="800">
+    <Grid>
+        <Grid Name="MainGrid" Margin="19,0,-19,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="400*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Name="UpGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="0"
+                VerticalAlignment="Stretch" Width="auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions >
+                <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cbBusLines" Grid.Column="1" HorizontalAlignment="Left" Margin="70,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbBusLines_SelectionChanged_1"/>
+                <Label x:Name="label1" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="85,22,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbArea" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="46,22,0,0" TextWrapping="Wrap" Text="{Binding Path=Area}"
+                 VerticalAlignment="Top" Width="120"/>
+            </Grid>
+            <ListBox x:Name="lbBusLineStations" HorizontalAlignment="Left" Height="339" Margin="10,23,0,0" Grid.Row="1" ItemsSource="{Binding}" VerticalAlignment="Top" Width="320" SelectionChanged="lbBusLineStations_SelectionChanged"/>
+        </Grid>
+    </Grid>
+</Window>

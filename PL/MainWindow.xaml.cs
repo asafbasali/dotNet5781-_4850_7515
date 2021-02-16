@@ -63,7 +63,17 @@ namespace PL
 
         private void click_add(object sender, MouseEventArgs e)
         {
-
+            if (this.emailbox.Text == "")
+            {
+                this.emailbox.Text = "Email";
+            }
+        }
+        private void click_add_pass(object sender, MouseEventArgs e)
+        {
+            if (this.passbox.Password == "")
+            {
+                this.passbox.Password = "Password";
+            }
         }
     }
 }

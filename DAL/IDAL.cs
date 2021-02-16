@@ -56,9 +56,9 @@ namespace DAL
                     }
                 }
             }
-            catch (Exception notexist)
+            catch (Exception e)
             {
-                throw;
+                throw e;
             }
             return null;
         }

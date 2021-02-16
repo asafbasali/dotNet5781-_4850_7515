@@ -24,16 +24,15 @@ namespace PL
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void AddUser(object sender, RoutedEventArgs e)
         {
             if (bl.checkifuserexist(this.emailbox1.Text))
             {
-                MessageBox.Show("you already sugned up \n maybe try to reset your password");
+                MessageBox.Show("you already signed up \n maybe try to reset your password");
             }
             else
             {
-                if (emailbox1.Text!="" && passbox2.Password == passbox3.Password)
+                if (emailbox1.Text != "" && passbox2.Password == passbox3.Password)
                 {
                     bl.AddUser(this.emailbox1.Text, this.passbox2.Password);
                     MessageBox.Show("you are sgined up now");

@@ -157,7 +157,7 @@
                     FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="0.4,15,0,15.4"/>
                 </Grid>
             </Border>
-            <Button Content="Button" Margin="100,0,100,0" Height="57"/>
+            <Button Content="Confirm" BorderBrush="Black" Foreground="Black" Margin="100,0,100,0" Height="57" Click="Button_Click_1" Background="Gray"/>
 
         </StackPanel>
     </Grid>

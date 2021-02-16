@@ -64,9 +64,9 @@ namespace BL
         {
             return dl.GetBus(ID);
         }
-        DO.User BLObject.GetUser(string name)
+        string BLObject.GetUserPass(string name)
         {
-            return dl.GetUser(name);
+            return dl.GetUserPass(name);
         }
         #endregion
     }

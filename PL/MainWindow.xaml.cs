@@ -31,7 +31,17 @@ namespace PL
         {
             if (bl.checkifuserexist(this.emailbox.Text))
             {
-                MessageBox.Show("you are in the system!");
+                string pass = bl.GetUserPass(this.emailbox.Text);
+                MessageBox.Show(pass);
+                if (this.passbox.Password == pass)
+                {
+                    MainBus win = new MainBus();
+                    win.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Name or Password are Incorrect");
+                }
             }
             else
             {

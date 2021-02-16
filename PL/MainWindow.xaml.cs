@@ -50,17 +50,20 @@ namespace PL
         {
 
         }
-
         private void opennewwindow(object sender, MouseEventArgs e)
         {
             SignUp sign = new SignUp();
             sign.ShowDialog();
         }
-
         private void opennewwindow(object sender, RoutedEventArgs e)
         {
             SignUp sign = new SignUp();
             sign.ShowDialog();
+        }
+
+        private void click_add(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

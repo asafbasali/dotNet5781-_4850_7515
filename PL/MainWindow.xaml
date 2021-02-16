@@ -78,7 +78,7 @@
                         Foreground = "Silver"
                         Text="Email"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold" MouseEnter="click_delete" TextChanged="emailbox_TextChanged" Margin="0.4,11,-0.4,19.4" HorizontalAlignment="Left" Width="140" Grid.Column="1"/>
+                        FontWeight="SemiBold" MouseEnter="click_delete" TextChanged="emailbox_TextChanged" Margin="0.4,11,-0.4,19.4" HorizontalAlignment="Left" Width="140" Grid.Column="1" MouseLeave="click_add"/>
                 </Grid>
             </Border>
             <Border

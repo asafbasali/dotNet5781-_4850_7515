@@ -45,9 +45,9 @@ namespace BL
         #endregion
 
         #region UpdaeFunctions
-        bool BLObject.checkifuserexist(string username,string password)
+        bool BLObject.checkifuserexist(string username)
         {
-            return dl.Checkifuserexsist(username, password);
+            return dl.Checkifuserexsist(username);
         }
         #endregion
 

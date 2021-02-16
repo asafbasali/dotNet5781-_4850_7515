@@ -19,9 +19,31 @@ namespace PL
     /// </summary>
     public partial class SignUp : Window
     {
+        BL.BLObject bl = new BL.BLI();
         public SignUp()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (bl.checkifuserexist(emailbox1.Text))
+            {
+                MessageBox.Show("you already sugned up \n maybe try to reset your password");
+            }
+            else
+            {
+                if (emailbox1.Text!="" && passbox2.Password == passbox3.Password)
+                {
+                    bl.AddUser(this.emailbox1.Text, this.passbox2.Password);
+                    MessageBox.Show("you are sgined up now");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Try Again");
+                }
+            }
         }
     }
 }

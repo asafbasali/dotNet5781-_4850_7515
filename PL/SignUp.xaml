@@ -1,4 +1,4 @@
-﻿<Window x:Class="PL.ForgotYourPass"
+﻿<Window x:Class="PL.SignUp"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -157,7 +157,7 @@
                     FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="0.4,15,0,15.4"/>
                 </Grid>
             </Border>
-            <Button Content="Confirm" BorderBrush="Black" Foreground="Black" Margin="100,0,100,0" Height="57" Click="Button_Click_1" Background="Gray"/>
+            <Button Content="Confirm" BorderBrush="Black" Foreground="Black" Margin="100,0,100,0" Height="57" Background="Gray"/>
 
         </StackPanel>
     </Grid>

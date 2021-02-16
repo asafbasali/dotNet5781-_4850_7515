@@ -78,7 +78,7 @@
                         Foreground = "Silver"
                         Text="Email"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold" MouseEnter="click_delete" TextChanged="emailbox_TextChanged" Margin="0.4,11,-0.4,19.4" HorizontalAlignment="Left" Width="140" Grid.Column="1" MouseLeave="click_add"/>
+                        FontWeight="SemiBold" MouseEnter="click_delete" TextChanged="emailbox_TextChanged" Margin="0.4,11,-0.4,19.4" HorizontalAlignment="Left" Width="140" Grid.Column="1"/>
                 </Grid>
             </Border>
             <Border
@@ -110,7 +110,7 @@
                         Grid.Column="1"
                         Password="Password"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold" MouseEnter="click_delete_pass" MouseLeave="click_add_pass"/>
+                        FontWeight="SemiBold" MouseEnter="click_delete_pass"/>
                 </Grid>
             </Border>
 

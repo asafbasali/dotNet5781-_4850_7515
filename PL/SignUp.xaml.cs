@@ -27,7 +27,7 @@ namespace PL
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (bl.checkifuserexist(emailbox1.Text))
+            if (bl.checkifuserexist(this.emailbox1.Text))
             {
                 MessageBox.Show("you already sugned up \n maybe try to reset your password");
             }

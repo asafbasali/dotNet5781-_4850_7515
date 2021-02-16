@@ -60,7 +60,6 @@ namespace PL
             SignUp sign = new SignUp();
             sign.ShowDialog();
         }
-
         private void click_add(object sender, MouseEventArgs e)
         {
             if (this.emailbox.Text == "")

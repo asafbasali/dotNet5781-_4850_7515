@@ -73,7 +73,7 @@
                         Foreground = "Silver"
                         Text="Email"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold" Margin="0.4,11,-0.4,19.4" HorizontalAlignment="Left" Width="140" Grid.Column="1"/>
+                        FontWeight="SemiBold" Margin="0,11,0,9" HorizontalAlignment="Left" Width="140" Grid.Column="1" Height="26" MouseEnter="email_add_1" MouseLeave="emailbox_del_1"/>
                 </Grid>
             </Border>
             <Grid Margin="0,0,0.4,0">
@@ -116,13 +116,12 @@
                     Fill="Silver" Margin="12.3,10.7"/>
 
                     <!--password textbox-->
-                    <PasswordBox x:Name="passbox3"
+                    <PasswordBox x:Name="passbox2"
                     BorderThickness="0"
                     Foreground = "Silver"
-                    Grid.Column="1"
                     Password="Password"
                     VerticalAlignment="Stretch"
-                    FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="0.4,15,0,15.4"/>
+                    FontWeight="SemiBold" Grid.ColumnSpan="3" Margin="49,10,1,12.4" MouseEnter="passbox" MouseLeave="passbox_dsl_2"/>
                 </Grid>
             </Border>
             <Border
@@ -148,16 +147,25 @@
                     Fill="Silver" Margin="12.3,10.7"/>
 
                     <!--password textbox-->
-                    <PasswordBox x:Name="passbox2"
+                    <PasswordBox x:Name="passbox3"
                     BorderThickness="0"
                     Foreground = "Silver"
                     Grid.Column="1"
                     Password="Password"
                     VerticalAlignment="Center"
-                    FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="0.4,15,0,15.4"/>
+                    FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="0,11,0,11.4" Height="24" MouseEnter="Passbox3" MouseLeave="passbox3_del"/>
                 </Grid>
             </Border>
-            <Button Content="Confirm" BorderBrush="Black" Foreground="Black" Margin="100,0,100,0" Height="57" Background="Gray" Click="AddUser"/>
+            <Button Content="Confirm" BorderBrush="Gray" Foreground="Black" Margin="100,0,100,0" Height="57"  Click="AddUser">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="#FFC0D1E1"/>
+                        <GradientStop Color="#FF2793BB" Offset="0.992"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
 
         </StackPanel>
     </Grid>

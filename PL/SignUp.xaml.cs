@@ -44,5 +44,50 @@ namespace PL
                 }
             }
         }
+
+        private void email_add_1(object sender, MouseEventArgs e)
+        {
+            if (this.emailbox1.Text == "Email")
+            {
+                this.emailbox1.Text = "";
+            }
+           
+        }
+        private void passbox(object sender, MouseEventArgs e)
+        {
+            if (this.passbox2.Password == "Password")
+            {
+                this.passbox2.Password = "";
+            }
+        }
+        private void Passbox3(object sender, MouseEventArgs e)
+        {
+            if (this.passbox3.Password == "Password")
+            {
+                this.passbox3.Password = "";
+            }
+        }
+
+        private void emailbox_del_1(object sender, MouseEventArgs e)
+        {
+            if (this.emailbox1.Text == "")
+            {
+                this.emailbox1.Text = "Email";
+            }
+        }
+        private void passbox_dsl_2(object sender, MouseEventArgs e)
+        {
+            if (this.passbox2.Password == "")
+            {
+                this.passbox2.Password = "Password";
+            }
+        }
+        private void passbox3_del(object sender, MouseEventArgs e)
+        {
+            if (this.passbox3.Password == "")
+            {
+                this.passbox3.Password = "Password";
+            }
+        }
     }
 }

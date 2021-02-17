@@ -35,7 +35,7 @@ namespace PL
                 MessageBox.Show(pass);
                 if (this.passbox.Password == pass)
                 {
-                    MainBus win = new MainBus();
+                    login win = new login();
                     win.Show();
                 }
                 else

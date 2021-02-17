@@ -45,9 +45,11 @@
                 </Ellipse.Fill>
             </Ellipse>
 
-            <!--Sine Up-->
-            <Button x:Name="signup"
-                Margin="0,30,0,0" MouseLeftButtonDown="opennewwindow" Background="White" Click="opennewwindow"><Run Text="Need an account? " /></Button>
+            <!--Sign Up-->
+            <Button x:Name="signup" Foreground="Silver" BorderBrush="Silver"
+                Margin="0,30,0,0" MouseLeftButtonDown="opennewwindow" Background="White" Click="opennewwindow">
+                <Run Text="Need an account? " />
+            </Button>
 
             <!--Email & Password Text Box-->
             <Border
@@ -78,7 +80,7 @@
                         Foreground = "Silver"
                         Text="Email"
                         VerticalAlignment="Center"
-                        FontWeight="SemiBold" MouseEnter="click_delete" TextChanged="emailbox_TextChanged" Margin="0.4,11,-0.4,19.4" HorizontalAlignment="Left" Width="140" Grid.Column="1" MouseLeave="click_add"/>
+                        FontWeight="SemiBold" MouseEnter="click_delete" TextChanged="emailbox_TextChanged" Margin="45,11,-3,9" HorizontalAlignment="Left" Width="145" MouseLeave="click_add" Height="26" Grid.ColumnSpan="2"/>
                 </Grid>
             </Border>
             <Border
@@ -129,10 +131,10 @@
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
-            Margin="62,0,86,20" Width="144" Background="White">
+            Margin="44,0,42,18" Width="206" Background="White" RenderTransformOrigin="0.549,0.5">
             <Hyperlink
                 TextDecorations="None">
-                Forgot your password?
+                Forgot Your Password?
             </Hyperlink>
         </Button>
 

@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Column="1" Grid.Row="1" Background="#FFA3A3A3">
+        <Grid Grid.Column="2" Grid.Row="2" Background="#FFA3A3A3">
             <ScrollViewer Background="#FFBABABA">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -102,7 +102,7 @@
                 <Button Margin="10" Height="35" Background="#FF9E5FC3">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Right" Text="CONEIGURACOES" FontFamily="Yu Gothic UI Semibold" Margin="0,0,26,0"/>
+                        <TextBlock HorizontalAlignment="Right" Text="configration" FontFamily="Yu Gothic UI Semibold" Margin="0,0,26,0"/>
                     </Grid>
                 </Button>
             </StackPanel>

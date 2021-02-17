@@ -36,7 +36,7 @@ namespace DAL
         #region User
         void AddUser(DO.User user);
         void RemoveUser(string UserName, string Password);
-        DO.User GetUser(string name);
+        string GetUserPass(string name);
         bool Checkifuserexsist(string username);
         #endregion
     }

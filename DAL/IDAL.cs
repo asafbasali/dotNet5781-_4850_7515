@@ -263,16 +263,16 @@ namespace DAL
                 //throw exeption
             }
         }
-        DO.User DALObject.GetUser(string name)
+        string DALObject.GetUserPass(string name)
         {
             foreach (DO.User user in DS.DataBase.Users)
             {
-                if (user.name == name)
+                if (user.UserName == name)
                 {
-                    return user;
+                    return user.UserPassword;
                 }
             }
-            return null;
+            return "not exist";
         }
         #endregion
     }

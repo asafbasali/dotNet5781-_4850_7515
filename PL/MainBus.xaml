@@ -12,21 +12,6 @@
                 <RowDefinition Height="50*"/>
                 <RowDefinition Height="400*"/>
             </Grid.RowDefinitions>
-
-            <Grid Name="UpGrid" HorizontalAlignment="Stretch" Height="auto" Grid.Row="0"
-                VerticalAlignment="Stretch" Width="auto">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions >
-                <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="cbBusLines" Grid.Column="1" HorizontalAlignment="Left" Margin="70,10,0,0" VerticalAlignment="Top" Width="120"/>
-                <Label x:Name="label1" Content="Label" Grid.Column="2" HorizontalAlignment="Left" Margin="85,22,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="tbArea" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="46,22,0,0" TextWrapping="Wrap" Text="{Binding Path=Area}"
-                 VerticalAlignment="Top" Width="120"/>
-            </Grid>
             <ListBox x:Name="lbBusLineStations" HorizontalAlignment="Left" Height="339" Margin="10,23,0,0" Grid.Row="1" ItemsSource="{Binding}" VerticalAlignment="Top" Width="320"/>
         </Grid>
     </Grid>

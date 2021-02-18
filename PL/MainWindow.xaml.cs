@@ -32,10 +32,10 @@ namespace PL
             if (bl.checkifuserexist(this.emailbox.Text))
             {
                 string pass = bl.GetUserPass(this.emailbox.Text);
-                MessageBox.Show(pass);
                 if (this.passbox.Password == pass)
                 {
                     login win = new login();
+                    this.Close();
                     win.Show();
                 }
                 else
@@ -50,11 +50,18 @@ namespace PL
         }
         private void click_delete(object sender, MouseEventArgs e)
         {
-            this.emailbox.Text = "";
+            if (this.emailbox.Text == "Email")
+            {
+                this.emailbox.Text = "";
+            }
         }
         private void click_delete_pass(object sender, MouseEventArgs e)
         {
-            this.passbox.Password = "";
+            if (this.passbox.Password == "Password")
+            {
+                this.passbox.Password = "";
+            }
+            
         }
         private void emailbox_TextChanged(object sender, TextChangedEventArgs e)
         {

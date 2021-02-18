@@ -36,6 +36,9 @@ namespace DS
         {
             #region Bus
             Buses.Add(new Bus(3000, 0, "123-123-123"));
+            Buses.Add(new Bus(3000, 0, "123-123-124"));
+            Buses.Add(new Bus(3000, 0, "123-123-126"));
+            Buses.Add(new Bus(3000, 0, "123-123-125"));
             #endregion
 
             #region station

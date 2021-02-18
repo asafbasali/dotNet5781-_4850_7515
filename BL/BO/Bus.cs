@@ -11,7 +11,7 @@ namespace BO
         public int totaldis { get; set; }
         public int sumdis { get; set; }
         public string iD { get; set; }
-        static DateTime start_date = new DateTime();
+        public DateTime start_date { get; set; }
         public Bus(int _fuel,int _sumdis,string ID)
         {
             this.fuel = _fuel;

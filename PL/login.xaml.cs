@@ -19,19 +19,33 @@ namespace PL
     /// </summary>
     public partial class login : Window
     {
+        BL.BLObject bl = new BL.BLI();
         public login()
         {
             InitializeComponent();
+            main.ItemsSource = bl.GetAllBuses();
         }
-       
         private void ButtonFechar_Click(object sender, RoutedEventArgs e) 
         {
-            Application.Current.Shutdown();       
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         } 
         private void GridBarraTitulo_MouseDown(object sender, MouseButtonEventArgs e) 
         {
             DragMove();
         }
 
+        private void open_busses(object sender, RoutedEventArgs e)
+        {
+            //PROFILE
+            MessageBox.Show("new window");
+            this.Content = new Busesss();
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

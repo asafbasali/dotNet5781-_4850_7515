@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using System.Collections.Generic;
+using DAL;
 
 namespace BL
 {
@@ -67,6 +68,26 @@ namespace BL
         string BLObject.GetUserPass(string name)
         {
             return dl.GetUserPass(name);
+        }
+        List<BO.Bus> BLObject.GetAllBuses()
+        {
+            List<BO.Bus> buses1 = new List<BO.Bus>();
+            List<DO.Bus>buses = dl.GetallBuses();
+            for (int i = 0; i < buses.Count; i++)
+            {
+                buses1.Add(new BO.Bus(buses[i].fuel, buses[i].sumdis, buses[i].iD));
+            }
+            return buses1;
+        }
+        List<BO.BusLine> BLObject.GetBusLines()
+        {
+            List<BO.BusLine> busesLines1 = new List<BO.BusLine>();
+            List<DO.BusLine> buseLines = dl.GetallBusLines();
+            for (int i = 0; i < buseLines.Count; i++)
+            {
+                busesLines1.Add(new BO.BusLine(buseLines[i].Id, buseLines[i].busnumber, buseLines[i].Idfirststation, buseLines[i].Idlaststation));
+            }
+            return busesLines1;
         }
         #endregion
     }

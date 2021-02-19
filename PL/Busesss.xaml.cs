@@ -20,14 +20,23 @@ namespace PL
     /// </summary>
     public partial class Busesss : Page
     {
+        BL.BLObject bl = new  BL.BLI();
         public Busesss()
         {
             InitializeComponent();
+            Busess.ItemsSource = bl.GetAllBuses();
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
+        }
+
+        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
+        {
+            login login = new login();
+            this.Content = null;
+            login.Show();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace PL
         {
             InitializeComponent();
         }
-
+        public string User_name_ { get; set; }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (bl.checkifuserexist(this.emailbox.Text))
@@ -34,9 +34,11 @@ namespace PL
                 string pass = bl.GetUserPass(this.emailbox.Text);
                 if (this.passbox.Password == pass)
                 {
+                    User_name_ = emailbox.Text;
                     login win = new login();
                     this.Close();
                     win.Show();
+                    User_name_ = emailbox.Text;
                 }
                 else
                 {

@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Timers;
+using System.ComponentModel;
+using System.Windows.Threading;
 
 namespace PL
 {
@@ -20,10 +22,16 @@ namespace PL
     public partial class login : Window
     {
         BL.BLObject bl = new BL.BLI();
+        public DateTime CurrentDateTime = DateTime.Now;
         public login()
         {
             InitializeComponent();
             main.ItemsSource = bl.GetAllBuses();
+        }
+        
+        void timer_Tick(object sender, EventArgs e)
+        {
+            CurrentDateTime = DateTime.Now;
         }
         private void ButtonFechar_Click(object sender, RoutedEventArgs e) 
         {
@@ -35,15 +43,43 @@ namespace PL
         {
             DragMove();
         }
+        private void windowloaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer dt = new DispatcherTimer();
+            dt.Interval = TimeSpan.FromSeconds(1);
+            dt.Tick += dt_tick;
+            dt.Start();
+        }
+        private void dt_tick(object sender, EventArgs e)
+        {
+            CurrentDateTime = DateTime.Now;
 
+            timelabel.Content = CurrentDateTime.ToString();
+        }
         private void open_busses(object sender, RoutedEventArgs e)
         {
-            //PROFILE
-            MessageBox.Show("new window");
+            //PROFILE ~ fixed!
+            Busesss busesss = new Busesss();
+            this.AddLogicalChild(busesss);
             this.Content = new Busesss();
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void open_Profiles(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void open_lines(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void open_stations(object sender, RoutedEventArgs e)
         {
 
         }

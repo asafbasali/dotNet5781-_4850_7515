@@ -59,17 +59,14 @@ namespace PL
         {
             main1.Content = new Busesss();
         }
-
         private void open_Profiles(object sender, RoutedEventArgs e)
         {
             main1.Content = new Profiless();
         }
-
         private void open_lines(object sender, RoutedEventArgs e)
         {
             main1.Content = new Liness();
         }
-
         private void open_stations(object sender, RoutedEventArgs e)
         {
             main1.Content = new Stationss();

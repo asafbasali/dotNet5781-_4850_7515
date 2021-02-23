@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -26,7 +25,7 @@ namespace PL
         public login()
         {
             InitializeComponent();
-            main.ItemsSource = bl.GetAllBuses();
+            main1.Content = bl.GetAllBuses();
         }
         
         void timer_Tick(object sender, EventArgs e)
@@ -58,30 +57,22 @@ namespace PL
         }
         private void open_busses(object sender, RoutedEventArgs e)
         {
-            //PROFILE ~ fixed!
-            Busesss busesss = new Busesss();
-            this.AddLogicalChild(busesss);
-            this.Content = new Busesss();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            main1.Content = new Busesss();
         }
 
         private void open_Profiles(object sender, RoutedEventArgs e)
         {
-
+            main1.Content = new Profiless();
         }
 
         private void open_lines(object sender, RoutedEventArgs e)
         {
-
+            main1.Content = new Liness();
         }
 
         private void open_stations(object sender, RoutedEventArgs e)
         {
-
+            main1.Content = new Stationss();
         }
     }
 }

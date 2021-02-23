@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Loaded="windowloaded"
         xmlns:local="clr-namespace:PL"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="597" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="693" Width="1096" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -100,7 +100,7 @@
 
 
         <Grid Grid.Column="1" Grid.Row="1" Background="#FFCFCFCF">
-            <ScrollViewer Margin="10,0,-10,-0.4">
+            <Grid Margin="10,0,-10,-0.4">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="200"/>
@@ -175,7 +175,7 @@
                         </Grid>
                     </Grid>
                 </Grid>
-            </ScrollViewer>
+            </Grid>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -255,30 +255,7 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <ListBox x:Name="main" HorizontalAlignment="Center" BorderThickness="1" Height="350" VerticalAlignment="Top" Width="600" Grid.Column="1" Margin="20,200,160,0" Grid.Row="1"  Background="{x:Null}" BorderBrush="#FF8522BD" SelectionChanged="ListBox_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Tag="{Binding Path = buses}" Height="50">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="10"/>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="200"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Width="Auto" VerticalAlignment="Center">
-                                    <Run Text="ID: "/>
-                                    <Run Text="{Binding iD}"/>
-                        </TextBlock>
-                        <TextBlock Grid.Column="2"  HorizontalAlignment="Right" Width="Auto" VerticalAlignment="Center">
-                                    <Run Text="start date: "/>
-                                    <Run Text="{Binding start_date}"/>
-                        </TextBlock>
-                        <Button x:Name="trip" Grid.Column="4" Content="Trip" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <Button x:Name="fuel" Grid.Column="3" Content="Fuel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <Frame x:Name="main1" Grid.Column="1"  Grid.Row="1" NavigationUIVisibility="Hidden" Height="450" Width="750" Margin="73,164,73,-1" />
+
     </Grid>
 </Window>

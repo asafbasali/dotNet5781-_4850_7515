@@ -274,6 +274,10 @@ namespace DAL
             }
             return "not exist";
         }
+        List<DO.User> DALObject.GetAllUsers()
+        {
+            return DS.DataBase.Users;
+        } 
         #endregion
     }
 }

@@ -20,9 +20,11 @@ namespace PL
     /// </summary>
     public partial class Stationss : Page
     {
+        BL.BLObject bl = new BL.BLI();
         public Stationss()
         {
             InitializeComponent();
+            stations.ItemsSource = bl.GetAllStations();
         }
     }
 }

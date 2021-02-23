@@ -10,11 +10,9 @@ namespace BO
     {
         public string name { get; set; }
         public string UserName { get; set; }
-        public string UserPassword { get; set; }
-        public User(string _UserName, string _UserPassword)
+        public User(string _UserName)
         {
             this.UserName = _UserName;
-            this.UserPassword = _UserPassword;
         }
         public User()
         {

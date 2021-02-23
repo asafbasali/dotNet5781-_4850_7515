@@ -79,7 +79,7 @@ namespace BL
             }
             return buses1;
         }
-        List<BO.BusLine> BLObject.GetBusLines()
+        List<BO.BusLine> BLObject.GetAllBusLines()
         {
             List<BO.BusLine> busesLines1 = new List<BO.BusLine>();
             List<DO.BusLine> buseLines = dl.GetallBusLines();
@@ -88,6 +88,26 @@ namespace BL
                 busesLines1.Add(new BO.BusLine(buseLines[i].Id, buseLines[i].busnumber, buseLines[i].Idfirststation, buseLines[i].Idlaststation));
             }
             return busesLines1;
+        }
+        List<BO.User> BLObject.GetAllUsers()
+        {
+            List<DO.User> users = dl.GetAllUsers();
+            List<BO.User> users1 = new List<BO.User>();
+            for (int i = 0; i < users.Count; i++)
+            {
+                users1.Add(new BO.User(users[i].UserName));
+            }
+            return users1;
+        }
+        List<BO.Station> BLObject.GetAllStations()
+        {
+            List<DO.Station> stations = dl.GetallStations();
+            List<BO.Station> stations1 = new List<BO.Station>();
+            for (int i = 0; i < stations.Count; i++)
+            {
+                stations1.Add(new BO.Station(stations[i].sBusStationKey, stations[i].Busstationaddres));
+            }
+            return stations1;
         }
         #endregion
     }

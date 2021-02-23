@@ -34,9 +34,7 @@ namespace PL
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
         {
-            login login = new login();
-            this.Content = null;
-            login.Show();
+            
         }
     }
 }

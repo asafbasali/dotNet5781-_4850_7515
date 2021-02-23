@@ -38,6 +38,7 @@ namespace DAL
         void RemoveUser(string UserName, string Password);
         string GetUserPass(string name);
         bool Checkifuserexsist(string username);
+        List<User> GetAllUsers();
         #endregion
     }
 }

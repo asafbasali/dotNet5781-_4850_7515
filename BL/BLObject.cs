@@ -33,7 +33,9 @@ namespace BL
         DO.Bus GetBus(string ID);
         string GetUserPass(string name);
         List<BO.Bus> GetAllBuses();
-        List<BO.BusLine> GetBusLines();
+        List<BO.BusLine> GetAllBusLines();
+        List<BO.User> GetAllUsers();
+        List<BO.Station> GetAllStations();
         #endregion
     }
 }

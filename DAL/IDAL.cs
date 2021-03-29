@@ -176,7 +176,7 @@ namespace DAL
                     B = bus;
                 }
             }
-            if (B == null)
+            if (B != null)
             {
                 DS.DataBase.Buses.Remove(B);
             }

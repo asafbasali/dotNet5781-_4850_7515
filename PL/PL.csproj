@@ -66,6 +66,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Addbus.xaml.cs">
+      <DependentUpon>Addbus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddLine.xaml.cs">
+      <DependentUpon>AddLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddStation.xaml.cs">
+      <DependentUpon>AddStation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Busesss.xaml.cs">
       <DependentUpon>Busesss.xaml</DependentUpon>
     </Compile>
@@ -78,6 +87,15 @@
     <Compile Include="Profiless.xaml.cs">
       <DependentUpon>Profiless.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Removebus.xaml.cs">
+      <DependentUpon>Removebus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveLine.xaml.cs">
+      <DependentUpon>RemoveLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RemveStation.xaml.cs">
+      <DependentUpon>RemveStation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
@@ -87,6 +105,18 @@
     <Compile Include="Stationss.xaml.cs">
       <DependentUpon>Stationss.xaml</DependentUpon>
     </Compile>
+    <Page Include="Addbus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddStation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="assets\icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -116,6 +146,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Profiless.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Removebus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemoveLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemveStation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

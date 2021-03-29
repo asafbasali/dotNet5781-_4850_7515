@@ -36,5 +36,19 @@ namespace PL
         {
             
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            Addbus addbus = new Addbus();
+            addbus.ShowDialog();
+            Busess.ItemsSource = bl.GetAllBuses();
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Removebus removebus = new Removebus();
+            removebus.ShowDialog();
+            Busess.ItemsSource = bl.GetAllBuses();
+        }
     }
 }

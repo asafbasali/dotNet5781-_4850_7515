@@ -10,7 +10,7 @@
         Title="Stations">
 
     <Grid>
-        <ListBox x:Name="stations" HorizontalAlignment="Center" BorderThickness="1" Height="495" VerticalAlignment="Top" Width="751" Margin="-1,3,0,0"  Background="{x:Null}" BorderBrush="#FF8522BD" RenderTransformOrigin="0.5,0.5">
+        <ListBox x:Name="stations" HorizontalAlignment="Center" BorderThickness="1" Width="751" Margin="-1,3,0,92"  Background="{x:Null}" BorderBrush="#FF8522BD" RenderTransformOrigin="0.5,0.5">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -41,5 +41,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button x:Name="button" Content="Add Station" HorizontalAlignment="Left" Margin="542,411,0,0" VerticalAlignment="Top" Width="114" Click="button_Click"/>
+        <Button x:Name="button1" Content="Remove Station" HorizontalAlignment="Left" Margin="97,413,0,0" VerticalAlignment="Top" Width="140" Click="button1_Click"/>
     </Grid>
 </Page>

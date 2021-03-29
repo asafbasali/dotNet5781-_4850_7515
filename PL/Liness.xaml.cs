@@ -30,5 +30,19 @@ namespace PL
             this.Content = null;
             login.Show();
         }
+
+        private void AddLine_Click(object sender, RoutedEventArgs e)
+        {
+            AddLine al = new AddLine();
+            al.ShowDialog();
+            linesss.ItemsSource = bl.GetAllBusLines();
+        }
+
+        private void RemoveLine_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveLine ar = new RemoveLine();
+            ar.ShowDialog();
+            linesss.ItemsSource = bl.GetAllBusLines();
+        }
     }
 }

@@ -25,7 +25,8 @@ namespace PL
         public login()
         {
             InitializeComponent();
-            main1.Content = bl.GetAllBuses();
+            Dashboard dash = new Dashboard();
+            main1.Content = dash;
         }
         
         void timer_Tick(object sender, EventArgs e)

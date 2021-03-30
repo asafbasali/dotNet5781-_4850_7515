@@ -40,5 +40,11 @@ namespace DAL
         bool Checkifuserexsist(string username);
         List<User> GetAllUsers();
         #endregion
+
+        #region onthemovebus
+        void AddOnTheMoveBus(DO.exiteLine exiteLine);
+        void RemoveOnTheMoveBus(int ID);
+        List<DO.exiteLine> GetAllOntheMoveBus();
+        #endregion
     }
 }

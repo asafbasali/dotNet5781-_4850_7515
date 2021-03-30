@@ -277,7 +277,37 @@ namespace DAL
         List<DO.User> DALObject.GetAllUsers()
         {
             return DS.DataBase.Users;
-        } 
+        }
+        #endregion
+
+        #region OnTheMoveBus
+        void DALObject.AddOnTheMoveBus(DO.exiteLine exite)
+        {
+            DS.DataBase.onthemoveline.Add(exite);
+        }
+        void DALObject.RemoveOnTheMoveBus(int ID)
+        {
+            DO.exiteLine temp = new DO.exiteLine();
+            foreach (DO.exiteLine user in DS.DataBase.onthemoveline)
+            {
+                if (user.IDLinebus == ID)
+                {
+                    temp = user;
+                }
+            }
+            if (temp != null)
+            {
+                DS.DataBase.onthemoveline.Remove(temp);
+            }
+            else
+            {
+                //throw exeption
+            }
+        }
+        List<DO.exiteLine> DALObject.GetAllOntheMoveBus()
+        {
+            return DS.DataBase.onthemoveline;
+        }
         #endregion
     }
 }

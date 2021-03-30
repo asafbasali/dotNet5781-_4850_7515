@@ -15,6 +15,7 @@ namespace DS
         //public static List<DO.FolowingStation> tracking_stations = new List<DO.FolowingStation>();
         public static List<DO.Bus> Buses = new List<DO.Bus>();
         public static List<DO.User> Users = new List<User>();
+        public static List<DO.exiteLine> onthemoveline = new List<exiteLine>();
 
         //private static DataBase instance;
         //public static DataBase Instance

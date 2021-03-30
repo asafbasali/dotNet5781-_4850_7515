@@ -24,6 +24,10 @@ namespace BL
         {
             dl.AddUser(new DO.User(_UserName,_UserPassword));
         }
+        void BLObject.Addonthemovebus(int finishtime, int ID, int busnum)
+        {
+            dl.AddOnTheMoveBus(new DO.exiteLine(finishtime, ID, busnum));
+        }
         #endregion
 
         #region RemoveFunctions
@@ -42,6 +46,10 @@ namespace BL
         void BLObject.RemoveUser(string UserName, string Password)
         {
             dl.RemoveUser(UserName, Password);
+        }
+        void BLObject.Removeonthemovebus(int ID)
+        {
+            dl.RemoveOnTheMoveBus(ID);
         }
         #endregion
 
@@ -108,6 +116,17 @@ namespace BL
                 stations1.Add(new BO.Station(stations[i].sBusStationKey, stations[i].Busstationaddres));
             }
             return stations1;
+        }
+        List<BO.exitLine> BLObject.GetExiteLines()
+        {
+            List<DO.exiteLine> lines = new List<DO.exiteLine>();
+            List<BO.exitLine> lines1 = new List<BO.exitLine>();
+            lines = dl.GetAllOntheMoveBus();
+            foreach (DO.exiteLine line in lines)
+            {
+                lines1.Add(new BO.exitLine(line.IDLinebus, line.exitLine, line.finishtime));   
+            }
+            return lines1;
         }
         #endregion
     }

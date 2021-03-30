@@ -20,9 +20,18 @@ namespace PL
     /// </summary>
     public partial class Dashboard : Page
     {
+        BL.BLObject bl = new BL.BLI();
         public Dashboard()
         {
             InitializeComponent();
+            dashboard.ItemsSource = bl.GetExiteLines();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            AddexitLine ae = new AddexitLine();
+            ae.ShowDialog();
+            dashboard.ItemsSource = bl.GetExiteLines();
         }
     }
 }

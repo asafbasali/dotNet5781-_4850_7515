@@ -69,6 +69,9 @@
     <Compile Include="Addbus.xaml.cs">
       <DependentUpon>Addbus.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddexitLine.xaml.cs">
+      <DependentUpon>AddexitLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddLine.xaml.cs">
       <DependentUpon>AddLine.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <DependentUpon>Stationss.xaml</DependentUpon>
     </Compile>
     <Page Include="Addbus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddexitLine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

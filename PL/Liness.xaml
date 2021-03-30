@@ -29,8 +29,8 @@
                                     <Run Text="Bus Number: "/>
                                     <Run Text="{Binding busnumber}"/>
                         </TextBlock>
-                        <Button x:Name="trip" Grid.Column="4" Content="Trip" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <Button x:Name="fuel" Grid.Column="3" Content="Fuel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Button x:Name="trip" Grid.Column="4" Content="Trip" HorizontalAlignment="Center" VerticalAlignment="Center" Click="trip_click"/>
+                        <Button x:Name="fuel" Grid.Column="3" Content="Fuel" HorizontalAlignment="Center" VerticalAlignment="Center" Click="trip_click"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

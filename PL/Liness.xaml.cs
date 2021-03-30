@@ -44,5 +44,13 @@ namespace PL
             ar.ShowDialog();
             linesss.ItemsSource = bl.GetAllBusLines();
         }
+        private void fuel_click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void trip_click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -33,5 +33,12 @@ namespace PL
             ae.ShowDialog();
             dashboard.ItemsSource = bl.GetExiteLines();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveExit re = new RemoveExit();
+            re.ShowDialog();
+            dashboard.ItemsSource = bl.GetExiteLines();
+        }
     }
 }

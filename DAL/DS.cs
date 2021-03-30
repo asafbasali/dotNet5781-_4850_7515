@@ -55,6 +55,11 @@ namespace DS
             Users.Add(new User("Asaf", "771"));
             #endregion
 
+            #region exitLine
+            DataBase.onthemoveline.Add(new exiteLine(10, 123, 123456));
+            DataBase.onthemoveline.Add(new exiteLine(10, 124, 123457));
+            DataBase.onthemoveline.Add(new exiteLine(10, 125, 123476));
+            #endregion
         }
     }
 }

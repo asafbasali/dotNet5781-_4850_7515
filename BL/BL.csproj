@@ -45,6 +45,7 @@
     <Compile Include="BLObject.cs" />
     <Compile Include="BO\Bus.cs" />
     <Compile Include="BO\BusLine.cs" />
+    <Compile Include="BO\exiteLine.cs" />
     <Compile Include="BO\Station.cs" />
     <Compile Include="BO\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

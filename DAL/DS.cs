@@ -15,6 +15,7 @@ namespace DS
         //public static List<DO.FolowingStation> tracking_stations = new List<DO.FolowingStation>();
         public static List<DO.Bus> Buses = new List<DO.Bus>();
         public static List<DO.User> Users = new List<User>();
+        public static List<DO.exiteLine> onthemoveline = new List<exiteLine>();
 
         //private static DataBase instance;
         //public static DataBase Instance
@@ -54,6 +55,11 @@ namespace DS
             Users.Add(new User("Asaf", "771"));
             #endregion
 
+            #region exitLine
+            DataBase.onthemoveline.Add(new exiteLine(10, 123, 123456));
+            DataBase.onthemoveline.Add(new exiteLine(10, 124, 123457));
+            DataBase.onthemoveline.Add(new exiteLine(10, 125, 123476));
+            #endregion
         }
     }
 }

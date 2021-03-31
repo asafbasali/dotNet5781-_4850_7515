@@ -25,7 +25,8 @@ namespace PL
         public login()
         {
             InitializeComponent();
-            main1.Content = bl.GetAllBuses();
+            Dashboard dash = new Dashboard();
+            main1.Content = dash;
         }
         
         void timer_Tick(object sender, EventArgs e)
@@ -59,17 +60,14 @@ namespace PL
         {
             main1.Content = new Busesss();
         }
-
         private void open_Profiles(object sender, RoutedEventArgs e)
         {
             main1.Content = new Profiless();
         }
-
         private void open_lines(object sender, RoutedEventArgs e)
         {
             main1.Content = new Liness();
         }
-
         private void open_stations(object sender, RoutedEventArgs e)
         {
             main1.Content = new Stationss();

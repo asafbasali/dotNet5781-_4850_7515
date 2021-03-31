@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DO
+namespace BO
 {
-    public class exiteLine
+    public class exitLine
     {
         public int IDLinebus { get; set; }
-        public int exitLine { get; set; }
+        public int ExitLine { get; set; }
         public int finishtime { get; set; }
-        public exiteLine() { }
-        public exiteLine(int _finishtime, int ID,int busnum)
+        public DateTime Time = DateTime.Now;
+        public exitLine(int ID, int busnum, int _finishtime)
         {
             IDLinebus = ID;
-            exitLine = busnum;
+            ExitLine = busnum;
             finishtime = _finishtime;
+            Time = Time.AddMinutes(_finishtime);
         }
     }  //internal int frequency;
 }

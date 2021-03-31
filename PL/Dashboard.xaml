@@ -1,4 +1,4 @@
-﻿<Page x:Class="PL.Stationss"
+﻿<Page x:Class="PL.Dashboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,10 +7,10 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" 
         d:DesignHeight="500" d:DesignWidth="750"
-        Title="Stations">
+        Title="Busesss">
 
     <Grid>
-        <ListBox x:Name="stations" HorizontalAlignment="Center" BorderThickness="1" Width="751" Margin="-1,3,0,92"  Background="{x:Null}" BorderBrush="#FF8522BD" RenderTransformOrigin="0.5,0.5">
+        <ListBox x:Name="dashboard" HorizontalAlignment="Center" BorderThickness="1" Height="408" VerticalAlignment="Top" Width="751" Margin="-1,3,0,0"  Background="{x:Null}" BorderBrush="#FF8522BD" RenderTransformOrigin="0.5,0.5">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,18 +30,19 @@
                             <ColumnDefinition Width="200"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Width="Auto" VerticalAlignment="Center">
-                                    <Run Text="ID: "/>
-                                    <Run Text="{Binding sBusStationKey}"/>
+                                    <Run Text="Line: "/>
+                                    <Run Text="{Binding IDLinebus}"/>
                         </TextBlock>
                         <TextBlock Grid.Column="2"  HorizontalAlignment="Right" Width="Auto" VerticalAlignment="Center">
-                                    <Run Text="Address: "/>
-                                    <Run Text="{Binding Busstationaddres}"/>
+                                    <Run Text="Finish Time: "/>
+                                    <Run Text="{Binding finishtime}"/>
+                                    <Run Text="Minutes"/>
                         </TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="button" Content="Add Station" HorizontalAlignment="Left" Margin="542,411,0,0" VerticalAlignment="Top" Width="114" Click="button_Click"/>
-        <Button x:Name="button1" Content="Remove Station" HorizontalAlignment="Left" Margin="97,413,0,0" VerticalAlignment="Top" Width="140" Click="button1_Click"/>
+        <Button x:Name="button" Content="Add" HorizontalAlignment="Left" Margin="564,417,0,0" VerticalAlignment="Top" Width="86" Click="button_Click"/>
+        <Button x:Name="button1" Content="Remove" HorizontalAlignment="Left" Margin="100,418,0,0" VerticalAlignment="Top" Width="88" Click="button1_Click"/>
     </Grid>
 </Page>

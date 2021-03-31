@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace PL
 {
@@ -38,6 +29,20 @@ namespace PL
             login login = new login();
             this.Content = null;
             login.Show();
+        }
+
+        private void AddLine_Click(object sender, RoutedEventArgs e)
+        {
+            AddLine al = new AddLine();
+            al.ShowDialog();
+            linesss.ItemsSource = bl.GetAllBusLines();
+        }
+
+        private void RemoveLine_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveLine ar = new RemoveLine();
+            ar.ShowDialog();
+            linesss.ItemsSource = bl.GetAllBusLines();
         }
     }
 }

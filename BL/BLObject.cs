@@ -14,6 +14,7 @@ namespace BL
         void AddBusLine(int _Id, string _busnumber, int _Idfirststation, int _Idlaststation);
         void AddStation(int _sBusStationKey, double _Latitude, double _Longitude, string _Busstationaddres);
         void AddUser(string _UserName, string _UserPassword);
+        void Addonthemovebus(int finishtime, int ID, int busnum);
         #endregion
 
         #region RemoveFunctions
@@ -21,6 +22,7 @@ namespace BL
         void RemoveBus(string ID);
         void RemoveStation(int stationkey);
         void RemoveBusLine(int ID);
+        void Removeonthemovebus(int ID);
         #endregion
 
         #region UpdateFunctions
@@ -36,6 +38,7 @@ namespace BL
         List<BO.BusLine> GetAllBusLines();
         List<BO.User> GetAllUsers();
         List<BO.Station> GetAllStations();
+        List<BO.exitLine> GetExiteLines();
         #endregion
     }
 }

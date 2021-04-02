@@ -72,5 +72,11 @@ namespace PL
         {
             main1.Content = new Stationss();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Dashboard dash = new Dashboard();
+            main1.Content = dash;
+        }
     }
 }

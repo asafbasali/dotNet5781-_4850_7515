@@ -20,7 +20,7 @@ namespace PL
     /// </summary>
     public partial class Busesss : Page
     {
-        BL.BLObject bl = new  BL.BLI();
+        BL.IBL bl = new  BL.BL();
         public Busesss()
         {
             InitializeComponent();

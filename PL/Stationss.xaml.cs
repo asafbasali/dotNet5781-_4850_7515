@@ -7,7 +7,7 @@ namespace PL
     /// </summary>
     public partial class Stationss : Page
     {
-        BL.BLObject bl = new BL.BLI();
+        BL.IBL bl = new BL.BL();
         public Stationss()
         {
             InitializeComponent();

@@ -19,7 +19,7 @@ namespace PL
     /// </summary>
     public partial class RemoveLine : Window
     {
-        BL.BLObject bl = new BL.BLI();
+        BL.IBL bl = new BL.BL();
         public RemoveLine()
         {
             InitializeComponent();

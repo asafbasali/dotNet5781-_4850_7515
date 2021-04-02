@@ -21,7 +21,7 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        BL.BLObject bl = new BL.BLI();
+        BL.IBL bl = new BL.BL();
         public MainWindow()
         {
             InitializeComponent();

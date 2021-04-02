@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DALFactory.cs" />
     <Compile Include="DALObject.cs" />
+    <Compile Include="DALXml.cs" />
     <Compile Include="DO\User.cs" />
     <Compile Include="DS.cs" />
     <Compile Include="DO\Bus.cs" />

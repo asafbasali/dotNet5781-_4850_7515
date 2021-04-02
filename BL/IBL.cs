@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public interface BLObject
+    public interface IBL
     {
         #region AddFunctions
         void AddBus(int _fuel, int _sumdis, string ID);

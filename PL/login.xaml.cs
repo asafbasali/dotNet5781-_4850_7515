@@ -20,7 +20,7 @@ namespace PL
     /// </summary>
     public partial class login : Window
     {
-        BL.BLObject bl = new BL.BLI();
+        BL.IBL bl = new BL.BL();
         public DateTime CurrentDateTime = DateTime.Now;
         public login()
         {

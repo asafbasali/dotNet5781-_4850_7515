@@ -1,19 +1,44 @@
-﻿using DO;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using DalApi;
 
 namespace DAL
 {
-    public class DALObject : IDAL
+    public class DALXml : IDAL
     {
         #region Singleton
-        static readonly DALObject instance = new DALObject();
-        static DALObject() { }
-        DALObject() { }
-        public static DALObject Instance => instance;
+        static readonly DALXml instance = new DALXml();
+        static DALXml() { }
+        DALXml() { }
+        public static DALXml Instance => instance;
+        #endregion
+
+        internal XElement LoadXml(string path)
+        {
+            try { return XElement.Load(path); }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+        }
+
+        #region Pathes
+        internal static readonly string path = Path.GetFullPath(
+            Path.Combine(Directory.GetCurrentDirectory(), @"..\..\"))
+                            + @"XMLFiles\{0}.xml";
+        internal readonly string configPath = String.Format(path, "config");
+        internal readonly string usersPath = String.Format(path, "Users");
+        internal readonly string stationsPath = String.Format(path, "Stations");
+        internal readonly string linesPath = String.Format(path, "Lines");
+        internal readonly string adjStationsPath = String.Format(path, "Adjacent Stations");
+        internal readonly string stationsLinePath = String.Format(path, "Stations Line");
+        internal readonly string lineTripsPath = String.Format(path, "Line Trips");
+        internal readonly string lineTimingsPath = String.Format(path, "Line Timing");
         #endregion
 
         #region BusLine
@@ -116,6 +141,22 @@ namespace DAL
         #endregion
 
         #region Station
+        internal IEnumerable<DO.Station> LoadStationsFromXml(XElement stationsRoot)
+        {
+            List<DO.Station> stations = new List<DO.Station>();
+            foreach (var station in stationsRoot.Elements())
+            {
+                stations.Add(new DO.Station
+                {
+                    sBusStationKey = int.Parse(station.Element("sBusStationKey").Value),
+                    Busstationaddres = station.Element("sBusStationKey").Value,
+                    Longitude = double.Parse(station.Element("Longitude").Value),
+                    Latitude = double.Parse(station.Element("sBusStationKey").Value)
+                });
+            }
+            return stations;
+        }
+
         public void AddStation(DO.Station newsstation)
         {
             DS.DataBase.Stations.Add(newsstation);

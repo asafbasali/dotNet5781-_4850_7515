@@ -3,81 +3,81 @@ using DAL;
 
 namespace BL
 {
-   public class BLI : BLObject
+   public class BL : IBL
     {
-        //DS.DataBase ds = DS.DataBase.Instance;
-        DALObject dl = new IDAL();
+        internal static IDAL dl = DalApi.DALFactory.GetDal(DalApi.Options.Object);
+        
         #region AddFunctions
-        void BLObject.AddBus(int _fuel, int _sumdis, string ID)
+        void IBL.AddBus(int _fuel, int _sumdis, string ID)
         {
             dl.AddBus(new DO.Bus(_fuel,_sumdis,ID));
         }
-        void BLObject.AddBusLine(int _Id, string _busnumber, int _Idfirststation, int _Idlaststation)
+        void IBL.AddBusLine(int _Id, string _busnumber, int _Idfirststation, int _Idlaststation)
         {
             dl.AddBusLine(new DO.BusLine(_Id,_busnumber,_Idfirststation,_Idlaststation));
         }
-        void BLObject.AddStation(int _sBusStationKey, double _Latitude, double _Longitude, string _Busstationaddres)
+        void IBL.AddStation(int _sBusStationKey, double _Latitude, double _Longitude, string _Busstationaddres)
         {
             dl.AddStation(new DO.Station(_sBusStationKey,_Latitude,_Longitude,_Busstationaddres));
         }
-        void BLObject.AddUser(string _UserName, string _UserPassword)
+        void IBL.AddUser(string _UserName, string _UserPassword)
         {
             dl.AddUser(new DO.User(_UserName,_UserPassword));
         }
-        void BLObject.Addonthemovebus(int finishtime, int ID, int busnum)
+        void IBL.Addonthemovebus(int finishtime, int ID, int busnum)
         {
             dl.AddOnTheMoveBus(new DO.exiteLine(finishtime, ID, busnum));
         }
         #endregion
 
         #region RemoveFunctions
-        void BLObject.RemoveBus(string ID)
+        void IBL.RemoveBus(string ID)
         {
             dl.RemoveBus(ID);
         }
-        void BLObject.RemoveBusLine(int ID)
+        void IBL.RemoveBusLine(int ID)
         {
             dl.RemoveBusLine(ID);
         }
-        void BLObject.RemoveStation(int stationkey)
+        void IBL.RemoveStation(int stationkey)
         {
             dl.removeStation(stationkey);
         }
-        void BLObject.RemoveUser(string UserName, string Password)
+        void IBL.RemoveUser(string UserName, string Password)
         {
             dl.RemoveUser(UserName, Password);
         }
-        void BLObject.Removeonthemovebus(int ID)
+        void IBL.Removeonthemovebus(int ID)
         {
             dl.RemoveOnTheMoveBus(ID);
         }
         #endregion
 
         #region UpdaeFunctions
-        bool BLObject.checkifuserexist(string username)
+        bool IBL.checkifuserexist(string username)
         {
             return dl.Checkifuserexsist(username);
         }
         #endregion
 
         #region GetFunctions
-        DO.BusLine BLObject.GetBusLine(int ID)
+        DO.BusLine IBL.GetBusLine(int ID)
         {
             return dl.GetBusLine(ID);
         }
-        DO.Station BLObject.GetStation(int ID)
+        DO.Station IBL.GetStation(int ID)
         {
             return dl.GetStation(ID);
         }
-        DO.Bus BLObject.GetBus(string ID)
+        DO.Bus IBL.GetBus(string ID)
         {
             return dl.GetBus(ID);
         }
-        string BLObject.GetUserPass(string name)
+        string IBL.GetUserPass(string name)
         {
             return dl.GetUserPass(name);
         }
-        List<BO.Bus> BLObject.GetAllBuses()
+        List<BO.Bus> IBL.GetAllBuses()
         {
             List<BO.Bus> buses1 = new List<BO.Bus>();
             List<DO.Bus>buses = dl.GetallBuses();
@@ -87,7 +87,7 @@ namespace BL
             }
             return buses1;
         }
-        List<BO.BusLine> BLObject.GetAllBusLines()
+        List<BO.BusLine> IBL.GetAllBusLines()
         {
             List<BO.BusLine> busesLines1 = new List<BO.BusLine>();
             List<DO.BusLine> buseLines = dl.GetallBusLines();
@@ -97,7 +97,7 @@ namespace BL
             }
             return busesLines1;
         }
-        List<BO.User> BLObject.GetAllUsers()
+        List<BO.User> IBL.GetAllUsers()
         {
             List<DO.User> users = dl.GetAllUsers();
             List<BO.User> users1 = new List<BO.User>();
@@ -107,7 +107,7 @@ namespace BL
             }
             return users1;
         }
-        List<BO.Station> BLObject.GetAllStations()
+        List<BO.Station> IBL.GetAllStations()
         {
             List<DO.Station> stations = dl.GetallStations();
             List<BO.Station> stations1 = new List<BO.Station>();
@@ -117,7 +117,7 @@ namespace BL
             }
             return stations1;
         }
-        List<BO.exitLine> BLObject.GetExiteLines()
+        List<BO.exitLine> IBL.GetExiteLines()
         {
             List<DO.exiteLine> lines = new List<DO.exiteLine>();
             List<BO.exitLine> lines1 = new List<BO.exitLine>();

@@ -11,7 +11,7 @@ namespace PL
     /// </summary>
     public partial class Liness : Page
     {
-        BL.BLObject bl = new BL.BLI();
+        BL.IBL bl = new BL.BL();
         public Liness()
         {
             InitializeComponent();

@@ -18,6 +18,7 @@ namespace DAL
         public static DALXml Instance => instance;
         #endregion
 
+        #region Pathes
         internal XElement LoadXml(string path)
         {
             try { return XElement.Load(path); }
@@ -26,8 +27,6 @@ namespace DAL
                 throw new Exception();
             }
         }
-
-        #region Pathes
         internal static readonly string path = Path.GetFullPath(
             Path.Combine(Directory.GetCurrentDirectory(), @"..\..\"))
                             + @"XMLFiles\{0}.xml";
@@ -138,6 +137,21 @@ namespace DAL
         {
             return DS.DataBase.BusLines;
         }
+        internal IEnumerable<DO.BusLine> LoadBusLinesFromXml(XElement BusLinesRoot)
+        {
+            List<DO.BusLine> Lines = new List<DO.BusLine>();
+            foreach (var line in BusLinesRoot.Elements())
+            {
+                line.Add(new DO.BusLine
+                {
+                    Id = int.Parse(line.Element("Id").Value),
+                    Idfirststation = int.Parse(line.Element("Idfirststation").Value),
+                    busnumber = line.Element("busnumber").Value,
+                    Idlaststation = int.Parse(line.Element("Idlaststation").Value)
+                });
+            }
+            return Lines;
+        }
         #endregion
 
         #region Station
@@ -156,7 +170,6 @@ namespace DAL
             }
             return stations;
         }
-
         public void AddStation(DO.Station newsstation)
         {
             DS.DataBase.Stations.Add(newsstation);
@@ -262,6 +275,19 @@ namespace DAL
         public List<DO.Bus> GetallBuses()
         {
             return DS.DataBase.Buses;
+        }
+        internal IEnumerable<DO.Bus> LoadBusesFromXml(XElement BusRoot)
+        {
+            List<DO.Bus> buses = new List<DO.Bus>();
+            foreach (var bus in BusRoot.Elements())
+            {
+                buses.Add(new DO.Bus
+                {
+                    iD = (bus.Element("iD").Value),
+                    sumdis = int.Parse(bus.Element("sumdis").Value)
+                });
+            }
+            return buses;
         }
         #endregion
 

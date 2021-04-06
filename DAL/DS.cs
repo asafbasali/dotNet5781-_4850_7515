@@ -43,7 +43,7 @@ namespace DS
             #endregion
 
             #region station
-            Stations.Add(new Station(123, 31, 100, "avtalyn"));
+            Stations.Add(new Station { sBusStationKey = 123, Busstationaddres = "avtalion" });
             #endregion
 
             #region Lines

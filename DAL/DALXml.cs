@@ -29,7 +29,7 @@ namespace DAL
         }
         internal static readonly string path = Path.GetFullPath(
             Path.Combine(Directory.GetCurrentDirectory(), @"..\..\"))
-                            + @"XMLFiles\{0}.xml";
+                            + @"XMLFILES\{0}.xml";
         internal readonly string configPath = String.Format(path, "config");
         internal readonly string usersPath = String.Format(path, "Users");
         internal readonly string stationsPath = String.Format(path, "Stations");

@@ -1,5 +1,7 @@
 <?xml version ="1.0" encoding="utf-8" standalone="yes"?>
-<Station>
-  <busnumber> 100</busnumber>
-  <iD>123456</iD>
-</Station>
+<Stations>
+  <Stations1>
+    <busnumber> 100</busnumber>
+    <iD>123456</iD>
+  </Stations1>
+</Stations>

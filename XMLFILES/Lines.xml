@@ -1,0 +1,9 @@
+<?xml version ="1.0" encoding="utf-8" standalone="yes"?>
+<Lines>
+  <Line1>
+    <Idfirststation> 123 </Idfirststation>
+    <iD>123456</iD>
+    <busnumber> 123123123 </busnumber>
+    <Idlaststation> 123123124 </Idlaststation>
+  </Line1>
+</Lines>

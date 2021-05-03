@@ -57,7 +57,7 @@ namespace dotNet5781_01_4850_7515
         }
         public void Fuel_your_Bus()
         {
-            fuel = 1200;
+            fuel = 3000;
         }
 
         public void Print_deatails()

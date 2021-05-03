@@ -66,7 +66,7 @@ namespace dotNet5781_01_4850_7515
                 {
                     if (bus.GetID() == id)
                     {
-                        bus.StartDrive(R.Next(20000));
+                        bus.StartDrive(R.Next(2000));
                     }
                     else
                     {

@@ -37,7 +37,7 @@ namespace dotNet5781_01_4850_7515
                 Console.WriteLine("you can't drive you need to treat your Bus\n");
                 count = 0;
             }
-            if (fuel - _dis*0.5 <= 0 && count == 1)
+            if (fuel - _dis/2 <= 0 && count == 1)
             {
                 Console.WriteLine("you can't drive you need to fuel your Bus\n");
             }
